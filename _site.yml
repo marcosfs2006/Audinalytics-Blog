@@ -2,8 +2,8 @@ name: "audinalytics"
 title: "Audinalytics"
 description: |
   Audinalytics
-base_url: https;/www.audinalytics.com.br
-output_dir: "_site"
+base_url: audinalytics.netlify.app
+output_dir: "_site" 
 navbar:
   right:
     - text: "Home"
