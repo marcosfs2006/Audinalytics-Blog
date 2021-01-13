@@ -13,8 +13,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-Bem vindo à minha página!
+>_Inteligência Analítica_ é a utilização extensiva de dados, análises quantitativas e estatísticas, modelos explicativos e preditivos e gestão baseada em fatos para orientar decisões e ações.
 
-Aqui você encontrará informações relacionadas ao uso do R em auditoria.
+>---Davenport e Harris (Competição Analítica)
 
-Espero que gostem!
+
