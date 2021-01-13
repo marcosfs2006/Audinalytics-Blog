@@ -5,8 +5,8 @@
       "title": "Sobre",
       "description": "Blog para discussão e implementação no software R de análise de dados aplicada à auditoria.",
       "author": [],
-      "contents": "\r\nOlá!\r\nEu sou o Marcos.\r\nTrabalho com auditoria do setor público no Tribunal de Contas de Estado do Rio de Janeiro - TCERJ e tenho utilizado o R de forma bem satisfatória como uma ferramenta para auxiliar na análise de dados cada vez mais necessária neste trabalho. Meu objetivo aqui é mostrar algumas possibilidades de usos do R como uma ferramenta de auditoria.\r\nExistem diversas opções para auditor quando se trata de realizar análise de dados em auditoria, mas espero mostrar que o R oferece um amplo leque de opções que o tornam uma escolha bem interessante.\r\nBasicamente gostaria de compartilhar com vocês as coisas que venho aprendendo ao longo dos anos.\r\nMoro no Rio de Janeiro, sou casado com a Lucianny (a mulher mais linda do mundo…), pai da Carol e de um pug chamado Froid.\r\nEspero que gostem deste lugar e que ele traga alguma coisa que seja útil pra vocês! Abs.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-01-12T23:11:50-03:00"
+      "contents": "\r\nOlá!\r\nEu sou o Marcos. Sejam bem vindo(a)s ao meu site!\r\nAqui você vai encontrar informações sobre o uso de análise de dados em auditoria com uso do software R e meu objetivo aqui é compartilhar com vocês algumas coisas que venho estudando e tentando aplicar no meu trabalho com auditoria.\r\nEu trabalho com auditoria do setor público já a alguns anos no Tribunal de Contas do Estado do Rio de Janeiro - TCERJ.\r\nMoro na cidade maravilhosa do Rio de Janeiro com minha esposa, tenho uma filha e um cachorrinho pug.\r\nEspero que gostem deste lugar e que ele traga alguma inspiração e motivação para que você inicie ou aprofunde seus estudos nessa área e que seja útil pra vocês! Abs.\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-01-13T15:28:41-03:00"
     },
     {
       "path": "blog.html",
@@ -14,15 +14,15 @@
       "description": "Blog para discussão e implementação no software R de análise de dados aplicada à auditoria.\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-01-12T23:11:55-03:00"
+      "last_modified": "2021-01-13T15:28:45-03:00"
     },
     {
       "path": "index.html",
       "title": "Audinalytics",
       "description": "Auditoria com Inteligência Analítica\n",
       "author": [],
-      "contents": "\r\nBem vindo à minha página!\r\nAqui você encontrará informações relacionadas ao uso do R em auditoria.\r\nEspero que gostem!\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-01-12T23:11:58-03:00"
+      "contents": "\r\n\r\nInteligência Analítica é a utilização extensiva de dados, análises quantitativas e estatísticas, modelos explicativos e preditivos e gestão baseada em fatos para orientar decisões e ações.\r\n\r\n\r\n—Davenport e Harris (Competição Analítica)\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-01-13T15:28:49-03:00"
     }
   ],
   "collections": ["posts/posts.json"]
