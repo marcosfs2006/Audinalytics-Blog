@@ -8,18 +8,27 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Olá!
+**Olá!**
 
-Eu sou o Marcos.
+Eu sou o Marcos. Sejam bem vindo(a)s!
 
-Trabalho com auditoria do setor público no Tribunal de Contas de Estado do Rio de Janeiro - TCERJ e tenho utilizado o R de forma bem satisfatória como uma ferramenta para auxiliar na análise de dados cada vez mais necessária neste trabalho. Meu objetivo aqui é mostrar algumas possibilidades de usos do R como uma ferramenta de auditoria.
+Neste site você vai encontrar 
+Eu vou compartilhar com vocês algumas coisas que venho estudando e tentando aplicar ao longo dos anos do meu trabalho com auditoria.
+
+Já tem mais de 20 anos que trabalho com auditoria do setor público no Tribunal de Contas de Estado do Rio de Janeiro - TCERJ e tenho, mais recentemente, utilizado o R de forma bem satisfatória como uma ferramenta para auxiliar na análise de dados, tarefa cada vez mais necessária neste trabalho.
+
+Meu objetivo aqui é mostrar não só o uso do R mas também algumas técnicas de análisee de dados que podem ser implementadas utilizando essa ferramente, tendo sempre que possível o contexto de auditoria como pano de fundo.
+
+Temos então o seguinte tripé: 
+
+* área de aplicação [auditoria];    
+* técnicas [análise de dados] e    
+* tecnologia [R e pacotes]
 
 Existem diversas opções para auditor quando se trata de realizar análise de dados em auditoria, mas espero mostrar que o R oferece um amplo leque de opções que o tornam uma escolha bem interessante.
 
-Basicamente gostaria de compartilhar com vocês as coisas que venho aprendendo ao longo dos anos.
+No mais, moro no Rio de Janeiro, sou casado com a Lucianny, pai da Carol e de um _pug_ chamado Froid. 
 
-Moro no Rio de Janeiro, sou casado com a Lucianny (a mulher mais linda do mundo...), pai da Carol e de um _pug_ chamado Froid. 
-
-Espero que gostem deste lugar e que ele traga alguma coisa que seja útil pra vocês! Abs.
+Espero que gostem deste lugar e que ele traga alguma inspiração e motivação para que você inicie ou aprofunde seus estudos e que seja útil pra vocês! Abs.
 
 
