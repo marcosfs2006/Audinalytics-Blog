@@ -10,10 +10,13 @@
       }
     ],
     "date": "2021-01-12",
-    "categories": [],
+    "categories": [
+      "Livro Audit Analytics",
+      "Teses Rutgers"
+    ],
     "contents": "\r\nO que é EDA?\r\nA Análise Exploratória de Dados ou, em inglês, Exploratory Data Analysis - EDA\r\nE como pode ser útil em auditoria?\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-01-12T14:24:39-03:00",
+    "last_modified": "2021-01-12T23:09:36-03:00",
     "input_file": {}
   }
 ]
