@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Audinalytics</title>
+    <link>https;/www.audinalytics.com.br</link>
+    <atom:link href="https;/www.audinalytics.com.br/blog.xml" rel="self" type="application/rss+xml"/>
+    <description>Audinalytics
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>ter, 12 jan 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>A EDA como Ferramenta de Trabalho do Auditor</title>
+      <dc:creator>Marcos F. Silva</dc:creator>
+      <link>https;/www.audinalytics.com.br/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor</link>
+      <description>Neste post discutimos o que é Análise Exploratória de Dados e como ela pode ser utilizada no processo de auditoria.</description>
+      <guid>https;/www.audinalytics.com.br/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor</guid>
+      <pubDate>ter, 12 jan 2021 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

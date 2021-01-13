@@ -1,0 +1,11 @@
+---
+title: "Blog"
+description: |
+  Blog para discussão e implementação no software R de análise de dados aplicada à auditoria.
+listing: posts
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+

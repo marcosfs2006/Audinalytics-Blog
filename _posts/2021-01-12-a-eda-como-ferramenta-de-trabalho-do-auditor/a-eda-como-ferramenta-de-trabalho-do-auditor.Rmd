@@ -1,0 +1,30 @@
+---
+title: "A EDA como Ferramenta de Trabalho do Auditor"
+description: |
+  Neste post discutimos o que é Análise Exploratória de Dados e como ela pode ser utilizada no processo de auditoria.
+author:
+  - name: Marcos F. Silva
+date: 01-12-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# O que é EDA?
+
+A Análise Exploratória de Dados ou, em inglês, Exploratory Data Analysis - EDA 
+
+
+
+# E como pode ser útil em auditoria?
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+---
+title: "Audinalytics"
+description: |
+  Auditoria com Inteligência Analítica
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+```
+
+Bem vindo à minha página!
+
+Aqui você encontrará informações relacionadas ao uso do R em auditoria.
+
+Espero que gostem!

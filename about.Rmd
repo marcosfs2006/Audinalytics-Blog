@@ -1,0 +1,25 @@
+---
+title: "Sobre"
+description: |
+  Blog para discussão e implementação no software R de análise de dados aplicada à auditoria.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Olá!
+
+Eu sou o Marcos.
+
+Trabalho com auditoria do setor público no Tribunal de Contas de Estado do Rio de Janeiro - TCERJ e tenho utilizado o R de forma bem satisfatória como uma ferramenta para auxiliar na análise de dados cada vez mais necessária neste trabalho. Meu objetivo aqui é mostrar algumas possibilidades de usos do R como uma ferramenta de auditoria.
+
+Existem diversas opções para auditor quando se trata de realizar análise de dados em auditoria, mas espero mostrar que o R oferece um amplo leque de opções que o tornam uma escolha bem interessante.
+
+Basicamente gostaria de compartilhar com vocês as coisas que venho aprendendo ao longo dos anos.
+
+Moro no Rio de Janeiro, sou casado com a Lucianny (a mulher mais linda do mundo...), pai da Carol e de um _pug_ chamado Froid. 
+
+Espero que gostem deste lugar e que ele traga alguma coisa que seja útil pra vocês! Abs.
+
+
