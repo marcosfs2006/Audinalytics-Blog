@@ -4,13 +4,16 @@ description: |
   Neste post discutimos o que é Análise Exploratória de Dados e como ela pode ser utilizada no processo de auditoria.
 author:
   - name: Marcos F. Silva
-date: 01-12-2021
+date: "`r Sys.Date()`"
 categories:
   - Livro Audit Analytics
   - Teses Rutgers
 output:
   distill::distill_article:
-  self_contained: false
+    self_contained: false
+    toc: true
+    toc_depth: 2
+    toc_float: true
 ---
 
 

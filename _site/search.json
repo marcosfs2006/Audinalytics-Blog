@@ -6,7 +6,7 @@
       "description": "Blog para discussão e implementação no software R de análise de dados aplicada à auditoria.",
       "author": [],
       "contents": "\r\nOlá!\r\nEu sou o Marcos. Sejam bem vindo(a)s ao meu site!\r\nAqui você vai encontrar informações sobre o uso de análise de dados em auditoria com uso do software R e meu objetivo aqui é compartilhar com vocês algumas coisas que venho estudando e tentando aplicar no meu trabalho com auditoria.\r\nEu trabalho com auditoria do setor público já a alguns anos no Tribunal de Contas do Estado do Rio de Janeiro - TCERJ.\r\nMoro na cidade maravilhosa do Rio de Janeiro com minha esposa, tenho uma filha e um cachorrinho pug.\r\nEspero que gostem deste lugar e que ele traga alguma inspiração e motivação para que você inicie ou aprofunde seus estudos nessa área e que seja útil pra vocês! Abs.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-01-13T15:28:41-03:00"
+      "last_modified": "2021-01-14T18:32:56-03:00"
     },
     {
       "path": "blog.html",
@@ -14,7 +14,7 @@
       "description": "Blog para discussão e implementação no software R de análise de dados aplicada à auditoria.\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-01-13T15:28:45-03:00"
+      "last_modified": "2021-01-14T18:33:00-03:00"
     },
     {
       "path": "index.html",
@@ -22,7 +22,15 @@
       "description": "Auditoria com Inteligência Analítica\n",
       "author": [],
       "contents": "\r\n\r\nInteligência Analítica é a utilização extensiva de dados, análises quantitativas e estatísticas, modelos explicativos e preditivos e gestão baseada em fatos para orientar decisões e ações.\r\n\r\n\r\n—Davenport e Harris (Competição Analítica)\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-01-13T15:28:49-03:00"
+      "last_modified": "2021-01-14T18:33:03-03:00"
+    },
+    {
+      "path": "projetos.html",
+      "title": "Projetos",
+      "description": "Alguns 'Projetos' nos quais venho trabalhando quando o tempo permite.",
+      "author": [],
+      "contents": "\r\nNesta página elenco alguns “Projetos” nos quais venho trabalhando (quanto o tempo permite), bem como alguns “Textos” que disponibilizei na internet que guardam relação com a temática deste site.\r\nProjeto ADPrevBook\r\nO meu projeto mais rencente é o **ADPrev\r\nProjeto PainelPrevRPPS\r\nTextos no RPubs\r\nTambém tenho algumas coisas que publiquei no RPubs. Vou relacionar a seguir:\r\nCálculo Atuarial Aplicado: Um Apêndice Computacional (projeto paralisado…) - 24/06/2020\r\nAcesso à API do SICONFI e CKAN com R - 2019-09-29\r\nAnálise de Dados Previdenciários - ADPrev - 23/09/2019\r\nSobre Visualização de Dados e Auditoria - 2019-07-25\r\nIntrodução à Amostragem de Unidades Monetárias com Aplicações em R -\r\nAlgumas Dicas para a Importação de Relatórios com o R\r\nGráfico Waterfall\r\nAnálise de Redes e Fundos de Investimentos\r\nMapas temáticos com R e ggplot2 - 05/08/2014\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-01-14T18:33:06-03:00"
     }
   ],
   "collections": ["posts/posts.json"]

@@ -1,7 +1,7 @@
 [
   {
     "path": "posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor/",
-    "title": "A EDA como Ferramenta de Trabalho do Auditor",
+    "title": "EDA como Ferramenta de Trabalho do Auditor",
     "description": "Neste post discutimos o que é Análise Exploratória de Dados e como ela pode ser utilizada no processo de auditoria.",
     "author": [
       {
@@ -9,14 +9,14 @@
         "url": {}
       }
     ],
-    "date": "2021-01-12",
+    "date": "2021-01-14",
     "categories": [
       "Livro Audit Analytics",
       "Teses Rutgers"
     ],
-    "contents": "\r\nO que é EDA?\r\nA Análise Exploratória de Dados ou, em inglês, Exploratory Data Analysis - EDA\r\nE como pode ser útil em auditoria?\r\n\r\n\r\n\r\n",
+    "contents": "\r\n\r\nContents\r\nO que é EDA?\r\nE como pode ser útil em auditoria?\r\n\r\nO que é EDA?\r\nA Análise Exploratória de Dados ou, em inglês, Exploratory Data Analysis - EDA\r\nE como pode ser útil em auditoria?\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-01-12T23:09:36-03:00",
+    "last_modified": "2021-01-14T16:04:04-03:00",
     "input_file": {}
   }
 ]

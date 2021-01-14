@@ -1,0 +1,39 @@
+---
+title: "Projetos"
+description: |
+  Alguns 'Projetos' nos quais venho trabalhando quando o tempo permite.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Nesta página elenco alguns "Projetos" nos quais venho trabalhando (quanto o tempo permite), bem como alguns "Textos" que disponibilizei na internet que guardam relação com a temática deste site.
+
+
+# Projeto ADPrevBook
+
+O meu projeto mais rencente é o **ADPrev
+
+
+
+# Projeto PainelPrevRPPS
+
+
+
+# Textos no RPubs
+
+Também tenho algumas coisas que publiquei no [RPubs](https://rpubs.com/marcosfs2006). Vou relacionar a seguir:
+
+* [Cálculo Atuarial Aplicado: Um Apêndice Computacional (projeto paralisado...) - 24/06/2020](https://rpubs.com/marcosfs2006/apendice_computacional)    
+* [Acesso à API do SICONFI e CKAN com R - 2019-09-29](https://rpubs.com/marcosfs2006/api_siconfi)    
+* [Análise de Dados Previdenciários - ADPrev - 23/09/2019](https://rpubs.com/marcosfs2006/ADPrev)    
+* [Sobre Visualização de Dados e Auditoria - 2019-07-25](https://rpubs.com/marcosfs2006/dataviz)    
+* [Introdução à Amostragem de Unidades Monetárias com Aplicações em R - ](https://rpubs.com/marcosfs2006/MUS_R)    
+* [Algumas Dicas para a Importação de Relatórios com o R](https://rpubs.com/marcosfs2006/importa_relatorios)    
+* [Gráfico Waterfall](https://rpubs.com/marcosfs2006/waterfall)    
+* [Análise de Redes e Fundos de Investimentos](https://rpubs.com/marcosfs2006/redes-sociais-rpps)    
+* [Mapas temáticos com R e ggplot2 -  05/08/2014](https://rpubs.com/marcosfs2006/mapas_ggplot2)    
+
+
+
