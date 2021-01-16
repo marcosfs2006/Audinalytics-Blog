@@ -15,6 +15,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 > _**Inteligência Analítica**_ é a utilização extensiva de dados, análises quantitativas e estatísticas, modelos explicativos e preditivos e gestão baseada em fatos para orientar decisões e ações.
 
-> ---Davenport e Harris (Competição Analítica)
+> ---Davenport e Harris (Competição Analítica - Vencendo através da Nova Ciência)
 
 
