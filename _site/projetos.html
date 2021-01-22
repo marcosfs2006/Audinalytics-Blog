@@ -447,8 +447,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     top: 0;
   }
   
+  /* adjust viewport for navbar height */
+  /* helps vertically center bootstrap (non-distill) content */
+  .min-vh-100 {
+    min-height: calc(100vh - 100px) !important;
+  }
+  
   </style>
   
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -556,19 +563,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
             var results = fuse.search(query, searchOptions);
             callback(results
               .map(function(result) { return result.item; })
-              .filter(function(item) { return !!item.description; })
             );
           },
           templates: {
             suggestion: function(suggestion) {
+              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+                : '';
               var html = `
                 <div class="search-item">
                   <h3>${suggestion.title}</h3>
                   <div class="search-item-description">
-                    ${suggestion.description}
+                    ${suggestion.description || ''}
                   </div>
                   <div class="search-item-preview">
-                    <img src="${suggestion.preview ? offsetURL(suggestion.preview) : ''}"</img>
+                    ${img}
                   </div>
                 </div>
               `;
@@ -591,6 +600,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
   
   <style type="text/css">
+  
+  .nav-search {
+    font-size: x-small;
+  }
   
   /* Algolioa Autocomplete */
   
@@ -666,6 +679,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
   
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    font-size: 1rem;
     margin-block-start: 0;
     margin-block-end: 5px;
   }
@@ -893,6 +907,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-decoration: underline;
   }
   
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+  
   @media(min-width: 768px) {
   
   d-article pre,
@@ -1047,6 +1066,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   div.hanging-indent{
     margin-left: 1em; text-indent: -1em;
+  }
+  
+  /* Citation hover box */
+  
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+  
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
   }
   
   
@@ -1714,7 +1744,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       var layout = $(this).attr('data-layout');
   
       // apply layout to markdown level block elements
-      var elements = $(this).children().not('div.sourceCode, pre, script');
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
       elements.each(function(i, el) {
         var layout_div = $('<div class="' + layout + '"></div>');
         if (layout_div.hasClass('shaded')) {
@@ -1829,6 +1859,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
+  
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
   
       // clear polling timer
       clearInterval(tid);
@@ -1989,7 +2033,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
   <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
   <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
@@ -2038,21 +2085,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<p>Nesta página elenco algumas coisas que fiz e alguns “Projetos” nos quais venho trabalhando (quando o tempo permite).</p>
-<p>Elenco alguns tutoriais que já disponibilizei na internet e que guardam relação com a temática deste site/blog (Análise de Dados Aplicada à Auditoria), o qual deve ser visto como uma ‘unificação’ e, espero, talvez até mesmo uma ‘ampliação’ deste ‘esforço’ para aproximar cada vez mais a análise de dados da auditoria por meio de exemplos práticos colhidos sempre que possível no dia a dia da prática auditorial.</p>
+<p>Aqui elenco alguns pequenos tutoriais bem como alguns “Projetos” nos quais venho trabalhando sempre que tempo permite e que estão disponíveis na internet para quem tiver interesse.</p>
+<p>Tudo o que está aqui apresentado guarda relação com a temática deste <em>site</em> que é o uso de análise de dados na atividade de auditoria. Estes <em>site</em> deve ser visto como um ponto de acesso a esse material que está um pouco espalhado pele internet e espero ampliar o que já foi produzido ou por intermédio de postagens no Blog.</p>
+<p>Com isso espero continuar tentando aproximar cada vez mais a análise de dados da auditoria por meio de exemplos práticos colhidos sempre que possível no dia a dia da prática auditorial.</p>
+<p>Espero que gostem. Vamos então aos “Projetos” e tutoriais:</p>
 <h1 id="projeto-adprevbook">Projeto <code>ADPrevBook</code></h1>
-<p>O meu “projeto” mais recente é o <a href="https://marcosfs2006.github.io/ADPrevBook/"><strong>ADPrevBook</strong></a> um documento/tutorial elaborado usando o pacote <code>bookdown</code> que tenta mostrar como os dados dos RPPS (Regimes Próprios de Previdência Social), disponibilizados pela SPREV, podem ser analisados com o objetivo de se adquirir um maior conhecimento sobre os mesmos e sua gestão.</p>
+<p>O meu “projeto” mais recente é o <a href="https://marcosfs2006.github.io/ADPrevBook/"><strong>ADPrevBook</strong></a> um tutorial elaborado usando o pacote <code>bookdown</code> que tenta mostrar como os dados dos RPPS (Regimes Próprios de Previdência Social), disponibilizados pela SPREV, podem ser analisados com o objetivo de se adquirir um maior conhecimento sobre os mesmos e sua gestão.</p>
+<p>Atualmente minha área de atuação é a auditoria/fiscalização dos Regimes Próprios de Previdência Social e existe uma enorme oportunidade de usar a análise de dados nessa área, visto que uma grande quantidade de dados dessas entidades, para todo o Brasil, são disponibilizadas pela Secretaria de Previdência.</p>
+<p>Esse tutorial é uma ampliação e atualização de um documento anterior publicado no <code>RPubs</code> (elencado mais abaixo)no qual são apresentadas sugestões de análise de alguns dos conjuntos de dados disponibilizados pela SPREV.</p>
+<p>O tutorial basicamente mostra o uso das TAACs tradicionais e a elaboração de gráficos. Uma parte importante é a “manipulação de dados” habilidade que o auditor prescisa desenvolver para conseguir realizar suas análises. Não contém, até o momento, nenhum uso de qualquer técnica de <em>machine learning</em>, o que está reservado para uma etapa posterior da elaboração deste tutorial.</p>
 <h1 id="projeto-painelprevrpps">Projeto <code>PainelPrevRPPS</code></h1>
-<p>Um outro projeto, também relacionado a RPPS que e tem estreita relação com o anterior é o <a href="https://marcosfs2006.shinyapps.io/painelprev/"><strong>PainelPrevRPPS</strong></a>, painel com dados dos RPPS feito usando o pacote flexdashboard com shiny.</p>
+<p>Um outro projeto, também relacionado aos RPPS que e tem estreita relação com o anterior é o <a href="https://marcosfs2006.shinyapps.io/painelprev/"><strong>PainelPrevRPPS</strong></a>, que é um painel que tem por objetivo facilitar a consulta a alguns dos dados dos RPPS brasileiros.</p>
+<p>O painel foi feito usando o pacote <code>flexdashboard</code> em conjunto com o <code>shiny</code>.</p>
+<p>Esse projeto tem relação com uma etapa importante que é a apresentação dos resultados de uma auditoria. Será que os relatórios devem ser sempre apresentados em papel?</p>
+<p>O R disponibiliza um amplo conjunto de ferramentas que pode auxiliar nessa etapa.</p>
 <h1 id="projeto-labdadosprevrpps">Projeto <code>LabDadosPrev("RPPS")</code></h1>
-<p>Ainda relacionado aos dois projetos anteriores, o <a href="https://colab.research.google.com/drive/1Myiiq8aRmoc14-IHNe5SNTNdYGjWI1tE?usp=sharing">Laboratório de Análise de Dados Previdenciários dos RPPS</a>, consiste em disponibilizar notebooks do Google Colab com informações sobre os dados dos RPPS e também com <em>scripts</em> em R que podem ser executados pelo usuário sem a necessidade de fazer qualquer instalação.</p>
-<p>A vantagem dos notebooks em relação ao documento <code>ADPrevBook</code> é que nos notebooks o usuário pode executar código apresentado, fazer modificações no mesmo, obter para si uma cópia do notebook e modificar tanto o script quanto o conteúdo textual.</p>
+<p>Ainda relacionado aos dois projetos anteriores, o <a href="https://colab.research.google.com/drive/1Myiiq8aRmoc14-IHNe5SNTNdYGjWI1tE?usp=sharing">Laboratório de Análise de Dados Previdenciários dos RPPS</a>, consiste em disponibilizar notebooks do <a href="https://colab.research.google.com/notebooks/intro.ipynb">Google Colab</a> com informações sobre os dados dos RPPS e também com <em>scripts</em> em R que podem ser executados pelo usuário sem a necessidade de instalar qualquer software.</p>
+<p>A vantagem dos notebooks em relação ao documento <code>ADPrevBook</code> é que nos notebooks o usuário pode executar o código apresentado, fazer modificações no mesmo, obter para si uma cópia do notebook e modificar tanto o <em>script</em> quanto o conteúdo textual.</p>
+<p>Notebooks também podem ser uma excelente ferramenta para a produção de papéis de trabalho.</p>
 <h1 id="análise-de-dados-aplicada-à-auditoria-com-r">Análise de Dados Aplicada à Auditoria com R</h1>
-<p>A possibilidade de usar código R nos notebooks do Google Colab abriu um leque de possibilidades. Uma dessas possibilidades foi a “migração/atualização” de um conjunto de tutoriais que comecei a elaborar a um bom tempo atrás que chamei de <a href="https://nbviewer.jupyter.org/github/marcosfs2006/Usando-R-em-Auditoria/blob/master/ipynb/usando_r_em_auditoria.ipynb">Usando R em Auditoria</a>. Estes tutoriais tinham por objetivo mostrar como implementar no R as denominadas <code>Técnicas de Auditoria Assistidas por Computador - TAAC</code>. Além das TAACs tradicionais também abordei um pouco a elaboração de gráficos, tópico importante mas totalmente negligenciado como ferramenta de auditoria. Estes tutoriais são estáticos, não permitindo ao usuário rodar os scripts apresentados, algo que o Google Colab permite fazer.</p>
+<p>A possibilidade de usar o R nos notebooks do Google Colab abriu um leque de possibilidades. Uma dessas possibilidades foi a “migração/atualização” de um conjunto de tutoriais que comecei a elaborar a um bom tempo atrás que chamei de <a href="https://nbviewer.jupyter.org/github/marcosfs2006/Usando-R-em-Auditoria/blob/master/ipynb/usando_r_em_auditoria.ipynb">Usando R em Auditoria</a>. Estes tutoriais tinham por objetivo mostrar como implementar no R as denominadas <code>Técnicas de Auditoria Assistidas por Computador - TAAC</code>. Além das TAACs tradicionais também abordei um pouco a elaboração de gráficos, tópico importante mas totalmente negligenciado como ferramenta de auditoria. Estes tutoriais são estáticos e não permitem ao usuário executar os scripts apresentados, algo que o Google Colab permite fazer.</p>
 <h1 id="textos-no-rpubs">Textos no RPubs</h1>
-<p>Também tenho algumas coisas publicadas no <a href="https://rpubs.com/marcosfs2006">RPubs</a>. Vou relacionar a seguir:</p>
+<p>Também tenho algumas coisas publicadas no <a href="https://rpubs.com/marcosfs2006">RPubs</a>:</p>
 <ul>
-<li><a href="https://rpubs.com/marcosfs2006/apendice_computacional">24/06/2020 Cálculo Atuarial Aplicado: Um Apêndice Computacional (projeto paralisado…)</a><br />
+<li><a href="https://rpubs.com/marcosfs2006/apendice_computacional">24/06/2020 Cálculo Atuarial Aplicado: Um Apêndice Computacional (projeto temporariamente paralisado…)</a><br />
 </li>
 <li><a href="https://rpubs.com/marcosfs2006/api_siconfi">29/09/2019 Acesso à API do SICONFI e CKAN com R</a><br />
 </li>

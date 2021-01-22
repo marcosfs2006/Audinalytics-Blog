@@ -4,22 +4,18 @@ description: |
   Alguns 'Projetos' nos quais venho trabalhando quando o tempo permite.
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+Elenco aqui pequenos tutoriais e alguns "Projetos" nos quais venho trabalhando sempre que tempo permite e que estão disponíveis na internet para quem tiver interesse. 
 
-Aqui elenco alguns pequenos tutoriais que já disponibilizei bem como alguns "Projetos" nos quais venho trabalhando sempre que tempo permite e que disponibilizo para para quem tiver interesse. 
+Tudo o que está aqui apresentado guarda relação com a temática deste _site_ que é o **uso de análise de dados na atividade de auditoria**. 
 
-Acredito que tudo o que está aqui relacionado guarda relação com a temática deste site/blog, que é o uso de análise de dados na atividade de auditoria. Estes site deve ser visto como um ponto de acesso a esse material que está um pouco espalhado pele internet e espero ampliar o que já foi produzido por intermédio de postagens no Blog.
-
-Com isso espero continuar tentando aproximar cada vez mais a análise de dados da auditoria por meio de exemplos práticos colhidos, sempre que possível, no dia a dia da prática auditorial.
+Este _site_ pode ser visto como um ponto de acesso a esse material que está um pouco espalhado pele internet. Espero também ampliar o que já foi produzido por intermédio de postagens no Blog. Com isso espero continuar tentando aproximar cada vez mais a análise de dados da auditoria por meio de exemplos práticos colhidos sempre que possível no dia a dia da prática auditorial.
 
 Espero que gostem. Vamos então aos "Projetos" e tutoriais: 
 
 
 # Projeto `ADPrevBook`
 
-O meu "projeto" mais recente é o [**ADPrevBook**](https://marcosfs2006.github.io/ADPrevBook/) um documento/tutorial elaborado usando o pacote `bookdown` que tenta mostrar como os dados dos RPPS (Regimes Próprios de Previdência Social), disponibilizados pela SPREV, podem ser analisados com o objetivo de se adquirir um maior conhecimento sobre os mesmos e sua gestão.  
+O meu "projeto" mais recente é o [**ADPrevBook**](https://marcosfs2006.github.io/ADPrevBook/) um tutorial elaborado usando o pacote `bookdown` que tenta mostrar como os dados dos RPPS (Regimes Próprios de Previdência Social), disponibilizados pela SPREV, podem ser analisados com o objetivo de se adquirir um maior conhecimento sobre os mesmos e sua gestão.  
 
 Atualmente minha área de atuação é a auditoria/fiscalização dos Regimes Próprios de Previdência Social e existe uma enorme oportunidade de usar a análise de dados nessa área, visto que uma grande quantidade de dados dessas entidades, para todo o Brasil, são disponibilizadas pela Secretaria de Previdência.
 
@@ -28,13 +24,19 @@ Esse tutorial é uma ampliação e atualização de um documento anterior public
 O tutorial basicamente mostra o uso das TAACs tradicionais e a elaboração de gráficos. Uma parte importante é a "manipulação de dados" habilidade que o auditor prescisa desenvolver para conseguir realizar suas análises. Não contém, até o momento, nenhum uso de qualquer técnica de _machine learning_, o que está reservado para uma etapa posterior da elaboração deste tutorial.
 
 
+# projeto `ADPrev`
+Outro projeto no qual venho trabalhando é a elaboração de um pacote para o R chamado `ADPrev` cujo objetivo é disponibilizar os dados dos RPPS bem como funções que facilitem a extração de informações úteis dos dados.
+
+O link do repositório do pacote no GitHub é <https://github.com/marcosfs2006/ADPrev>
+
+
 # Projeto `PainelPrevRPPS`
 
 Um outro projeto, também relacionado aos RPPS que e tem estreita relação com o anterior é o [**PainelPrevRPPS**](https://marcosfs2006.shinyapps.io/painelprev/), que é um painel que tem por objetivo facilitar a consulta a alguns dos dados dos RPPS brasileiros.
 
-O painel foi feito usando o pacote `flexdashboard`  em conjunto com o `shiny`.
+O painel foi feito usando o pacote `flexdashboard` em conjunto com o `shiny`.
 
-Esse projeto tem relação com uma etapa importante que é a apresentação dos resultados de uma auditoria. Será que os relatórios devem ser sempre apresentados em papel? 
+Esse projeto tem relação com uma etapa importante que é a apresentação dos resultados de uma auditoria. O uso de paineis pode ser uma ferramenta bastante efetiva para o monitoramento de indicadores e avaliação de risco. 
 
 O R disponibiliza um amplo conjunto de ferramentas que pode auxiliar nessa etapa.
 
@@ -66,8 +68,5 @@ Também tenho algumas coisas publicadas no [RPubs](https://rpubs.com/marcosfs200
 * [03/10/2018 Gráfico Waterfall](https://rpubs.com/marcosfs2006/waterfall)    
 * [13/10/2018 Análise de Redes e Fundos de Investimentos](https://rpubs.com/marcosfs2006/redes-sociais-rpps)    
 * [05/08/2014 Mapas temáticos com R e ggplot2](https://rpubs.com/marcosfs2006/mapas_ggplot2)    
-
-
-Alguns códigos estão disponíveis no GitHub: <https://github.com/marcosfs2006>
 
 

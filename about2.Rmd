@@ -1,21 +1,17 @@
 ---
 title: "Marcos F. Silva"
-#image: "img/minha-foto.jpg"
-#links:
-#  - label: GitHub
-#    url: "https://github.com/marcosfs2006"
-#  - label: Email
-#    url: "marcosfs2006@gmail.com"
-#  - label: LinkedIn
-#    url: "https://www.linkedin.com/in/marcosfsilva/"
-#description: |
-#  Blog para discussão e implementação no software R de análise de dados aplicada à auditoria.
+image: "img/minha-foto.jpg"
+links:
+  - label: GitHub
+    url: "https://github.com/marcosfs2006"
+  - label: Email
+    url: "marcosfs2006@gmail.com"
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/marcosfsilva/"
+output:
+  postcards::trestles
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
+ 
 **Olá!**
 
 Meu nome é Marcos. Sejam bem vindo(a)s ao meu site!
@@ -28,4 +24,4 @@ Moro na cidade maravilhosa do Rio de Janeiro com minha esposa, tenho uma filha e
 
 Espero que gostem deste lugar e que ele traga alguma inspiração e motivação para que você inicie ou aprofunde seus estudos nessa área e que seja útil pra vocês! Abs.
 
-Caso você tenha alguma dica de análise, queira fazer alguma sugestão ou mesmo crítica, pode encaminhar para o meu email: `marcosfs2006@gmail.com`.
+Caso você tenha alguma dica de análise, queira fazer alguma sugestão ou mesmo crítica, pode encaminhar para o meu email.
