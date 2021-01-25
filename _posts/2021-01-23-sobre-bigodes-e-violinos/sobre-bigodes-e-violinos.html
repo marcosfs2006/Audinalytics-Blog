@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","categories","output","description","draft"]}},"value":[{"type":"character","attributes":{},"value":["Sobre Bigodes e Violinos"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Marcos F. Silva"]}]}]},{"type":"character","attributes":{},"value":["2021-01-24"]},{"type":"character","attributes":{},"value":["Livro Audit Analytics"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["Algumas considerações sobre alguns gráficos apresentados no capítulo Foundations of Audit Analystics do livro [Audit Analytics](https://www.springer.com/gp/book/9783030490904) do J. C. Westland.\n"]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","categories","output","description","draft"]}},"value":[{"type":"character","attributes":{},"value":["Sobre Bigodes e Violinos"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Marcos F. Silva"]}]}]},{"type":"character","attributes":{},"value":["2021-01-24"]},{"type":"character","attributes":{},"value":["Livro Audit Analytics"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["Algumas considerações sobre alguns gráficos apresentados no capítulo Foundations of Audit Analystics do livro [Audit Analytics](https://www.springer.com/gp/book/9783030490904) do J. C. Westland.\n"]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1684,7 +1684,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 7    7      FALSE
 8    8      FALSE
 9    9      FALSE
-10  10       TRUE</code></pre>
+10  10      FALSE</code></pre>
 </div>
 <p>O conjunto de dados consiste em uma coluna indicando a numeração sequencial de 1 a 1000 e outra indicando se o número está duplicado na base ou não. Esta base de dados é derivada do que seria a base “original” que apresento a seguir:</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1698,14 +1698,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre><code>   invoice_no       date
 1           1 2021-01-01
 2           2 2021-01-01
-3           3 2021-01-02
-4           4 2021-01-02
-5           5 2021-01-02
-6           6 2021-01-03
-7           7 2021-01-03
-8           8 2021-01-04
-9          10 2021-01-04
-10         10 2021-01-04</code></pre>
+3           3 2021-01-04
+4           4 2021-01-04
+5           5 2021-01-04
+6           6 2021-01-04
+7           7 2021-01-04
+8           8 2021-01-05
+9           9 2021-01-05
+10         10 2021-01-05</code></pre>
 </div>
 <p>A base de dados possui o número sequencial (<code>invoice_no</code>) e a data de emissão (<code>date</code>). Será que tem uma forma melhor de “visualizar” as duplicidades?</p>
 <p>Vou apresentar aqui minha proposta:</p>

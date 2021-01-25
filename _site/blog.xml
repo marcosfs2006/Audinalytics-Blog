@@ -9,14 +9,14 @@
     <generator>Distill</generator>
     <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>EDA como Ferramenta de Trabalho do Auditor</title>
+      <title>Sobre Bigodes e Violinos</title>
       <dc:creator>Marcos F. Silva</dc:creator>
-      <link>audinalytics.netlify.app/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor</link>
-      <description>Neste post discutimos o que é Análise Exploratória de Dados e como ela pode ser utilizada no processo de auditoria.</description>
+      <link>audinalytics.netlify.app/posts/2021-01-23-sobre-bigodes-e-violinos</link>
+      <description>Algumas considerações sobre alguns gráficos apresentados no capítulo Foundations of Audit Analystics do livro [Audit Analytics](https://www.springer.com/gp/book/9783030490904) do J. C. Westland.</description>
       <category>Livro Audit Analytics</category>
-      <category>Teses Rutgers</category>
-      <guid>audinalytics.netlify.app/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor</guid>
+      <guid>audinalytics.netlify.app/posts/2021-01-23-sobre-bigodes-e-violinos</guid>
       <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      <media:content url="audinalytics.netlify.app/posts/2021-01-23-sobre-bigodes-e-violinos/sobre-bigodes-e-violinos_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
   </channel>
 </rss>

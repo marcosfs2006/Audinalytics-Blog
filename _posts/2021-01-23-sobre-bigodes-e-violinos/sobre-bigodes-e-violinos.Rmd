@@ -14,7 +14,7 @@ output:
     code_folding: true
 description: |
   Algumas considerações sobre alguns gráficos apresentados no capítulo Foundations of Audit Analystics do livro [Audit Analytics](https://www.springer.com/gp/book/9783030490904) do J. C. Westland.
-draft: true
+draft: false
 ---
 
 # Considerações iniciais
