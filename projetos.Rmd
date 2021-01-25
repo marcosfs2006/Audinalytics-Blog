@@ -24,7 +24,7 @@ Esse tutorial é uma ampliação e atualização de um documento anterior public
 O tutorial basicamente mostra o uso das TAACs tradicionais e a elaboração de gráficos. Uma parte importante é a "manipulação de dados" habilidade que o auditor prescisa desenvolver para conseguir realizar suas análises. Não contém, até o momento, nenhum uso de qualquer técnica de _machine learning_, o que está reservado para uma etapa posterior da elaboração deste tutorial.
 
 
-# projeto `ADPrev`
+# Projeto `ADPrev`
 Outro projeto no qual venho trabalhando é a elaboração de um pacote para o R chamado `ADPrev` cujo objetivo é disponibilizar os dados dos RPPS bem como funções que facilitem a extração de informações úteis dos dados.
 
 O link do repositório do pacote no GitHub é <https://github.com/marcosfs2006/ADPrev>

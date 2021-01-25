@@ -93,8 +93,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <link rel="canonical" href="audinalytics.netlify.app/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor/"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2021-01-14"/>
-<meta property="article:created" itemprop="dateCreated" content="2021-01-14"/>
+<meta property="article:published" itemprop="datePublished" content="2021-01-24"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-01-24"/>
 <meta name="article:author" content="Marcos F. Silva"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -114,19 +114,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
 <meta name="citation_title" content="Audinalytics: EDA como Ferramenta de Trabalho do Auditor"/>
 <meta name="citation_fulltext_html_url" content="audinalytics.netlify.app/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor/"/>
-<meta name="citation_online_date" content="2021/01/14"/>
-<meta name="citation_publication_date" content="2021/01/14"/>
+<meta name="citation_online_date" content="2021/01/24"/>
+<meta name="citation_publication_date" content="2021/01/24"/>
 <meta name="citation_author" content="Marcos F. Silva"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["EDA como Ferramenta de Trabalho do Auditor"]},{"type":"character","attributes":{},"value":["Neste post discutimos o que é Análise Exploratória de Dados e como ela pode ser utilizada no processo de auditoria."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Marcos F. Silva"]}]}]},{"type":"character","attributes":{},"value":["2021-01-14"]},{"type":"character","attributes":{},"value":["Livro Audit Analytics","Teses Rutgers"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["audinalytics.netlify.app/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor/"]},{"type":"character","attributes":{},"value":["audinalytics.netlify.app/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["EDA como Ferramenta de Trabalho do Auditor"]},{"type":"character","attributes":{},"value":["Neste post discutimos o que é Análise Exploratória de Dados e como ela pode ser utilizada no processo de auditoria."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Marcos F. Silva"]}]}]},{"type":"character","attributes":{},"value":["2021-01-24"]},{"type":"character","attributes":{},"value":["Livro Audit Analytics","Teses Rutgers"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["audinalytics.netlify.app/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor/"]},{"type":"character","attributes":{},"value":["audinalytics.netlify.app/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["a-eda-como-ferramenta-de-trabalho-do-auditor_files/anchor-4.2.2/anchor.min.js","a-eda-como-ferramenta-de-trabalho-do-auditor_files/bowser-1.9.3/bowser.min.js","a-eda-como-ferramenta-de-trabalho-do-auditor_files/distill-2.2.21/template.v2.js","a-eda-como-ferramenta-de-trabalho-do-auditor_files/jquery-1.11.3/jquery.min.js","a-eda-como-ferramenta-de-trabalho-do-auditor_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2051,6 +2051,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!--/radix_placeholder_distill-->
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
   <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
   <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
   <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
@@ -2066,7 +2070,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"EDA como Ferramenta de Trabalho do Auditor","description":"Neste post discutimos o que é Análise Exploratória de Dados e como ela pode ser utilizada no processo de auditoria.","authors":[{"author":"Marcos F. Silva","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-01-14T00:00:00.000-03:00","citationText":"Silva, 2021"}
+{"title":"EDA como Ferramenta de Trabalho do Auditor","description":"Neste post discutimos o que é Análise Exploratória de Dados e como ela pode ser utilizada no processo de auditoria.","authors":[{"author":"Marcos F. Silva","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-01-24T00:00:00.000-03:00","citationText":"Silva, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2104,7 +2108,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="d-byline">
   Marcos F. Silva  
   
-<br/>2021-01-14
+<br/>2021-01-24
 </div>
 
 <div class="d-article">
@@ -2135,7 +2139,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="appendix-bottom">
   <h3 id="citation">Citation</h3>
   <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Silva (2021, Jan. 14). Audinalytics: EDA como Ferramenta de Trabalho do Auditor. Retrieved from audinalytics.netlify.app/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor/</pre>
+  <pre class="citation-appendix short">Silva (2021, Jan. 24). Audinalytics: EDA como Ferramenta de Trabalho do Auditor. Retrieved from audinalytics.netlify.app/posts/2021-01-12-a-eda-como-ferramenta-de-trabalho-do-auditor/</pre>
   <p>BibTeX citation</p>
   <pre class="citation-appendix long">@misc{silva2021eda,
   author = {Silva, Marcos F.},

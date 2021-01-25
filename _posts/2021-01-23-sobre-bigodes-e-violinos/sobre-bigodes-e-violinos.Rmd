@@ -1,0 +1,225 @@
+---
+title: "Sobre Bigodes e Violinos"
+author:
+- name: Marcos F. Silva
+date: 2021-01-24
+categories:
+  - Livro Audit Analytics
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    code_folding: true
+description: |
+  Algumas considerações sobre alguns gráficos apresentados no capítulo Foundations of Audit Analystics do livro [Audit Analytics](https://www.springer.com/gp/book/9783030490904) do J. C. Westland.
+draft: true
+---
+
+# Considerações iniciais
+
+Em linhas gerais o capítulo trata da exploração grafica de variáveis em um conjunto de dados, dos tipos de variáveis e comenta sobre as estruturas de dados existentes no R (vetores, matrizes, arrays, data frames, listas e fatores) e comenta rapidamente sobre a importância de outras estruturas de dados importantes em contabilidade como as séries temporais, os dados geolocalizados e os grafos.
+
+Uma novidade pra mim foi o pacote [`plotluck`](https://cran.r-project.org/web/packages/plotluck/vignettes/plotluck.html) que eu não conhecia. O pacote se propõe a apresentar a melhor visualização dos dados com base em suas características.
+
+O livro possui um pacote associado chamado `auditanalytics` e pode ser instalado a partir do [repositório do livo no GitHub](https://github.com/westland/auditanalytics) onde estão disponíveis os dados utilizados, bem como notebooks com resumos dos capítulos do livro.
+
+O resumo do capítulo 2 está contido no arquivo [`ch_2_statistics_analytics.Rmd`](https://github.com/westland/auditanalytics/blob/main/Notebooks/ch_2_statistics_analytics.Rmd).
+
+A instalação do pacote pode ser feita da seguinte forma:
+
+```{r, eval=FALSE, code_folding=FALSE}
+# install.packages("devtools")
+devtools::install_github("westland/auditanalytics")
+```
+
+Os dados utilizados estão armazenados em arquivos `csv` no próprio pacote e nesse aspecto acho que um ponto de melhoria seria disponibilizá-los no formato `.RData` com a correspondente documentação como usualmente ocorre nos pacotes do R.
+
+A falta de documentação dos dados, tanto no livro como no repositório e no pacote é uma falha importante visto que uma boa análise de dados pressupõe um bom conhecimento dos mesmos.
+
+A disponibilização dos dados em arquivos `csv` torna a importação um pouco mais trabalhosa.
+
+
+# Gráficos apresentados no capítulo
+
+A motivação para eu escrever este _post_ foi a percepção de que alguns dos gráficos apresentados no capítulo não me pareceram uma boa escolha ou talvez eu não tenha compreendido corretamente a proposta do autor.
+
+O capítulo apresenta ao leitor quatro tipos de gráficos: histograma, gráfico de violino, boxplot e diagrama de dispersão como formas de explorar os dados, o que me faz chamar a atenção para o fato de que os gráficos a serem utilizados pelo auditor em grande medida dependem do tipo de dado que se queira visualizar e que infelizmente o uso de gráficos pelos auditores como uma ferramenta de exploração é ainda bastante incipiente.  
+
+O primeiro gráfico que eu gostaria de comentar consta da página 29 e tem por objetivo, nas palavras do autor:
+
+>"Na figura a seguir estamos interessados em saber se a fraude em cartões de crédito é influenciada pelo valor pago ao auditor. A gente analisa uma variável binária examinando a variação em uma outra variável conforme os valores da mesma estejam associados ao valor 0 ou 1 da variável binária."
+
+O gráfico em questão, utilizado com vistas a ilustrar a exploração de variáveis binárias, é o seguinte:
+
+```{r, code_folding=TRUE}
+library(auditanalytics)
+library(ggplot2)
+library(dplyr)
+
+# Importação dos dados
+sox_stats <- read.csv(system.file("extdata", "ch_2_data_types.csv", package="auditanalytics", mustWork=TRUE))
+
+# Gráfico
+ggplot(sox_stats, aes(x=non_audit_fee, y=audit_fee, col=as.factor(card)))+
+  geom_violin() +
+  labs(col="Fraud = 1 (green)")
+```
+
+A primeira coisa a comentar é o uso do [**gráfico de violino**](https://towardsdatascience.com/violin-plots-explained-fb1d115e023d), que por ser um gráfico muito pouco conhecido, certamente não seria uma opção para a grande maioria dos auditores.
+
+A ajuda da função `geom_violin()` diz que "*O gráfico de violino é uma representação compacta de uma distribuição contínua. É uma mistura do `geom_boxplot()` e do `geom_density()`: o gráfico de violino é um gráfico de densidade 'espelhado' representado da mesma forma que um boxplot.*"
+
+O "box and whisker plot" (gráfico de caixa e bigodes) ou simplesmente boxplot, é um gráfico que tem por objetivo apresentar a distribuição de uma variável quantitativa por intermédio dos quartis da distribuição e indicação de limites superiores e inferiores denominados "cercas".
+
+O boxplot e o gráfico de violino tem função semelhante, sendo que o gráfico de violino tem a vantagem de mostrar além da variabilidade dos dados e os quartis a forma da distribuição da variável por intermédio de sua densidade.
+
+A seguir apresento o mesmo conjunto de dados usando um boxplot, um gráfico de densidade e um gráfico de violino para tentar realçar a diferença entre os dois. Os dados são apresentados em cinza para dar uma ideia da localização dos mesmos.
+
+```{r, code_folding=TRUE}
+# Boxplot
+sox_stats %>% 
+  filter(card %in% c(0, 1)) %>% 
+ggplot(aes(y=audit_fee, x=as.factor(card)))+
+  geom_boxplot() +
+  geom_jitter(color="grey", width = 0.2)
+
+# Density
+sox_stats %>% 
+  filter(card %in% c(0, 1)) %>% 
+ggplot(aes(y=audit_fee))+
+  geom_density(fill="lightblue") +
+  facet_wrap(~ as.factor(card)) 
+  
+# Violino
+sox_stats %>% 
+  filter(card %in% c(0, 1)) %>% 
+ggplot(aes(y=audit_fee, x=as.factor(card)))+
+  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75), color="blue") +
+  geom_jitter(color="grey", width = 0.2)
+```
+
+
+Examinando os três gráficos é possível perceber que o gráfico de violino é um gráfico de densidade refletido, o que lhe dá a simetria observada e é também parecido com um boxplot, mostrando a variabilidade dos dados e os quartis.
+
+Onde existe maior concentração de dados, o gráfico de violino expressa isso  na "largura" da curva, ou seja, onde tem maior concentração de dados a curva é mais larga. 
+
+Voltando ao gráfico apresentado pelo autor, comentei que o objetivo declarado desse gráfico seria avaliar se a fraude em cartões de crédito é influencidada pelo valor pago aos auditores contratados.
+
+O gráfico faz uso de 3 variáveis: `audit_fee`, `non_audit_fee` e `card` e como já disse a base de dados não está comentada, não possuindo informações sobre o significado de cada variável e a estrutura geral dos dados. Assim, será necessário deduzir algumas coisas, o que não é o que se deve fazer na prática. O auditor deve buscar compreender com a maior clareza possível o significado de cada variável e suas particularidades para que possa ter condições de identificar situações que fujam da normalidade. 
+
+Aparentemente a variável `card` indica se a observação refere-se à fraude ou não. As outras variáveis indicam o valor pago aos auditores em razão de serviços contratados de auditoria e serviços não relacionados a auditoria.
+
+A primeira coisa que não fica clara no gráfico apresentado é o uso da variável `non_audit_fee`, uma variável quantitativa contínua, no eixo dos `x`. Considerando que o objetivo de um gráfico de violino é representar a distribuição da variável no eixo `y`, que deve ser quantitativa, a variável `non_audit_fee` não traz informação adicional para o gráfico.
+
+O mesmo problema ocorre com o gráfico apresentado na página 30, e que reproduzo a seguir utilizando o código apresentado no livro:
+
+```{r, code_folding=TRUE}
+library(tidyr)
+
+sox_stats$card <- as.integer(sox_stats$card)
+
+sox_stats1 <- gather(sox_stats,
+                     key="metric",
+                     value = value,
+                     effective_303,
+                     mat_weak_303,
+                     sig_def_303,
+                     effective_404,
+                     auditor_agrees_303)
+
+ggplot(sox_stats1, aes(x=non_audit_fee, y=audit_fee, col=metric)) +
+  geom_violin() +
+  scale_x_continuous(trans = "log2") +
+  scale_y_continuous(trans = "log2")
+```
+
+O gráfico mostra os "violinos" igualmente espaçados e mostrando a mesma distribuição para a variável `audit_fee` para todos os valores da variável `metric`. 
+
+Novamente aqui a variável `non_audit_fee ` parece não ter qualquer influência no gráfico. Chama a atenção também o fato dos "violinos" serem todos iguais. O fato de não conhecermos em mais detalhes a base de dados dificulta a inspeção em busca de confirmação quanto a correção do resultado apresentado. 
+
+O fato é que não é possível extrair maiores informações nem confirmar a exatidão do resultado sem um maior conhecimento dos dados. 
+
+Também os gráficos apresentados nas páginas 31 e 32 não me pareceram uma boa escolha para o propósito desejado.
+
+Aqui o objetivo do autor é ilustrar a análise de variáveis ordinais, mais especificamente omissões ou duplicidades em variáveis que possuem valores sequenciais, tais como os números das notas fiscais.
+
+O gráfico a seguir, apresentado pelo autor, tem o objetivo de permitir a identificação visual de faturas duplicadas.
+
+```{r, code_folding=TRUE}
+library(lubridate)
+#library(kableExtra)
+
+## função para gerar datas aleatórias no ano corrente
+rdate <- function(x,
+                  min = paste0(format(Sys.Date(), '%Y'), '-01-01'),
+                  max = paste0(format(Sys.Date(), '%Y'), '-12-31'),
+                  sort = TRUE) {
+  dates <- sample(seq(as.Date(min), as.Date(max), by = "day"), x, replace = TRUE)
+  if (sort == TRUE) {
+    sort(dates)
+  } else {
+    dates
+  }
+}
+
+## Cria um data frame com 2 coluna e preenche com os valores 1 a 1000 
+invoice_no <- date <- 1:1000  ## placeholder
+journal_ent_no <- cbind.data.frame(invoice_no,date)
+
+# Sorteia 1000 datas entre 01-01-2021 e 31-12-2021 e ordena
+date <- rdate(1000)
+
+# Substitui os valores no campo 'data' pelas datas sorteadas
+journal_ent_no$date <- date[order(date)]
+
+# Adiciona duplicidades 
+journal_ent_no$invoice_no <- seq(1,1000) + rbinom(1000,1,.1) # add some errors
+
+# Cria um novo data frame com identificação das duplicidades.
+duplicates <- duplicated(journal_ent_no$invoice_no)
+raw <- seq(1,1000)
+journal_dups <- cbind.data.frame(raw,duplicates)
+
+# Faz o gráfico
+ggplot(journal_dups, aes(x=invoice_no, y=raw, col=duplicates)) + 
+  geom_point()
+
+```
+
+Como pode ser visto as duplicidades, em azul, não sobressaem muito. Como o espaço para o gráfico é pequeno os pontos se sobrepõem, dificultando a visualização.
+
+Vou mostrar os registros iniciais do conjunto de dados utilizado para fazer esse gráfico:
+
+```{r}
+head(journal_dups, 10)
+```
+
+O conjunto de dados consiste em uma coluna indicando a numeração sequencial de 1 a 1000 e outra indicando se o número está duplicado na base ou não. Esta base de dados é derivada do que seria a base "original" que apresento a seguir:
+
+```{r}
+head(journal_ent_no, 10)
+```
+
+A base de dados possui o número sequencial (`invoice_no`) e a data de emissão (`date`). Será que tem uma forma melhor de "visualizar" as duplicidades? 
+
+Vou apresentar aqui minha proposta:
+
+```{r, fig.width=12, fig.height=3}
+ggplot(journal_dups) + 
+  geom_vline(xintercept = invoice_no,
+             color=ifelse(duplicates, "blue", "white"))+
+  labs(x="Numeração Sequencial")
+```
+As linhas em azul indicam as faturas duplicadas. Podemos ver que a distribuição das duplicidades não aparenta ter um padrão definido. 
+
+Na minha opinião a visualização das duplicidades ficou um pouco melhor. Naturalmente que quanto maior a quantidade de dados mais difícil ficará a visualização, principalmente se a mesma referir-se a visualizar os dados inidividualmente, como é o caso apresentado pelo autor.
+
+É claro que com um simples filtro é possível obter exatamente os números das faturas duplicadas, mas seria difícil perceber qualquer padrão nos dados caso eles existissem.  
+
+O gráfico na página 32 é muito parecido mas busca identificar faturas omitidas. Acredito que a mesma solução pode ser usada na visualização.
+
+Bem, por ora é tudo. Espero que tenham gostado.
+
+
