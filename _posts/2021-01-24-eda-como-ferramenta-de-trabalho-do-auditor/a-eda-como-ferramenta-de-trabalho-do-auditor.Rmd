@@ -28,10 +28,12 @@ A Análise Exploratória de Dados ou, em inglês, Exploratory Data Analysis - ED
 
 
 
-# E como pode ser útil em auditoria?
+# Como a EDA pode ser útil em auditoria?
 
 
 
+
+# Exemplos de uso.
 
 
 

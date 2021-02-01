@@ -7,7 +7,15 @@
     <description>Audinalytics
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Audit Analytics</title>
+      <dc:creator>Marcos F. Silva</dc:creator>
+      <link>audinalytics.netlify.app/posts/2021-01-27-audit-analytics</link>
+      <description>Neste _post_ meu objetivo é falar um pouco sobre o que é _Audit Analytics_ e onde encontrar material para estudo.</description>
+      <guid>audinalytics.netlify.app/posts/2021-01-27-audit-analytics</guid>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Sobre Bigodes e Violinos</title>
       <dc:creator>Marcos F. Silva</dc:creator>
