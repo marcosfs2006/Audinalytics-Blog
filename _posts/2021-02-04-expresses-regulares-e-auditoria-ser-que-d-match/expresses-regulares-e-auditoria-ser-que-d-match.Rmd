@@ -70,7 +70,7 @@ Como é possível ver pelo resultado, as _strings_ `José` e `joão` 'casaram' c
 
 A definição de expressões regulares faz uso de caracteres que possuem significado especial os quais são denominados de **metacaracteres**. Os metacaracteres `^` e `[]` tem funções bem específicas.  
 
-A indicação de que a letra jota deve estar no ínício da _string_ é dada pelo matacaractere `^`, enquanto a indicação que o jota poderia ser maiúsculo ou minúsculo é dada pelo matacaractere `[]` que, no exemplo, informa que a _string_ pode iniciar com qualquer dos caracteres em seu interior.
+A indicação de que a letra jota deve estar no ínício da _string_ é dada pelo metacaractere `^`, enquanto a indicação que o jota poderia ser maiúsculo ou minúsculo é dada pelo metacaractere `[]` que, no exemplo, informa que a _string_ pode iniciar com qualquer dos caracteres em seu interior.
 
 E se quisermos identificar as _strings_ que terminem com "o" ou "os"?
 

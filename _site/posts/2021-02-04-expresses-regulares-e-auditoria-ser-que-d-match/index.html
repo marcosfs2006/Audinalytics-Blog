@@ -2149,20 +2149,20 @@ Diz-se que ocorreu um <em>match</em> quando o padrão de <em>string</em> express
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_view.html'>str_view</a></span><span class='op'>(</span>string<span class='op'>=</span><span class='va'>nomes</span>, pattern<span class='op'>=</span><span class='st'>"^[Jj]"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="htmlwidget-05db66a39c708e6d7420" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-05db66a39c708e6d7420">{"x":{"html":"<ul>\n  <li>Marcolino<\/li>\n  <li>Marcos<\/li>\n  <li><span class='match'>J<\/span>osé<\/li>\n  <li><span class='match'>j<\/span>oão<\/li>\n  <li>Marcio<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0a928ceef5ebad63a69b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0a928ceef5ebad63a69b">{"x":{"html":"<ul>\n  <li>Marcolino<\/li>\n  <li>Marcos<\/li>\n  <li><span class='match'>J<\/span>osé<\/li>\n  <li><span class='match'>j<\/span>oão<\/li>\n  <li>Marcio<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>Como é possível ver pelo resultado, as <em>strings</em> <code>José</code> e <code>joão</code> ‘casaram’ com a expressão regular <code>^[Jj]</code> que define o padrão desejado, ou seja, iniciam com a letra jota, seja ela maiúscula ou minúscula.</p>
 <p>A definição de expressões regulares faz uso de caracteres que possuem significado especial os quais são denominados de <strong>metacaracteres</strong>. Os metacaracteres <code>^</code> e <code>[]</code> tem funções bem específicas.</p>
-<p>A indicação de que a letra jota deve estar no ínício da <em>string</em> é dada pelo matacaractere <code>^</code>, enquanto a indicação que o jota poderia ser maiúsculo ou minúsculo é dada pelo matacaractere <code>[]</code> que, no exemplo, informa que a <em>string</em> pode iniciar com qualquer dos caracteres em seu interior.</p>
+<p>A indicação de que a letra jota deve estar no ínício da <em>string</em> é dada pelo metacaractere <code>^</code>, enquanto a indicação que o jota poderia ser maiúsculo ou minúsculo é dada pelo metacaractere <code>[]</code> que, no exemplo, informa que a <em>string</em> pode iniciar com qualquer dos caracteres em seu interior.</p>
 <p>E se quisermos identificar as <em>strings</em> que terminem com “o” ou “os”?</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_view.html'>str_view</a></span><span class='op'>(</span>string<span class='op'>=</span><span class='va'>nomes</span>, pattern<span class='op'>=</span><span class='st'>"os?$"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="htmlwidget-29bbd4ab0e739b2836ce" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-29bbd4ab0e739b2836ce">{"x":{"html":"<ul>\n  <li>Marcolin<span class='match'>o<\/span><\/li>\n  <li>Marc<span class='match'>os<\/span><\/li>\n  <li>José<\/li>\n  <li>joã<span class='match'>o<\/span><\/li>\n  <li>Marci<span class='match'>o<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-16ecc6f7cad9d32af962" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-16ecc6f7cad9d32af962">{"x":{"html":"<ul>\n  <li>Marcolin<span class='match'>o<\/span><\/li>\n  <li>Marc<span class='match'>os<\/span><\/li>\n  <li>José<\/li>\n  <li>joã<span class='match'>o<\/span><\/li>\n  <li>Marci<span class='match'>o<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>Esse exemplo, embora ainda simples, já começa a indicar que as expressões regulares podem ser bem complexas. E de fato são.</p>
 <p>Nesse exemplo, aparecem mais dois novos metacaracteres: <code>$</code> e <code>?</code>. O metacaractere <code>$</code> é responsável por indicar que os caracteres desejados devem estar no final da <em>string</em> enquanto o metacaractere <code>?</code> informa que o caractere que o precede é opcional, podendo aparecer ou não na <em>string</em>. Assim, essa expressão regular define o seguinte padrão: <em>strings</em> que terminem com o caractere <code>o</code> sucedido ou não do caractere <code>s</code>.</p>
@@ -2171,8 +2171,8 @@ Diz-se que ocorreu um <em>match</em> quando o padrão de <em>string</em> express
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_view.html'>str_view</a></span><span class='op'>(</span>string<span class='op'>=</span><span class='va'>nomes</span>, pattern<span class='op'>=</span><span class='st'>"[nc]os?$"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="htmlwidget-215cc84c808c402c7697" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-215cc84c808c402c7697">{"x":{"html":"<ul>\n  <li>Marcoli<span class='match'>no<\/span><\/li>\n  <li>Mar<span class='match'>cos<\/span><\/li>\n  <li>José<\/li>\n  <li>joão<\/li>\n  <li>Marcio<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e22157a523d714f895ee" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e22157a523d714f895ee">{"x":{"html":"<ul>\n  <li>Marcoli<span class='match'>no<\/span><\/li>\n  <li>Mar<span class='match'>cos<\/span><\/li>\n  <li>José<\/li>\n  <li>joão<\/li>\n  <li>Marcio<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>No exemplo acima, a expressão regular define o seguinte padrão: o caractere <code>o</code> precedido dos caracteres <code>n</code> ou <code>c</code> e sucedido ou não do caractere <code>s</code> no final da <em>string</em>.</p>
 <p>Naturalmente que existem muitos outros metacaracteres que não foram abordados nesses exemplos simples cujo objetivo é apenas passar a ideia do que sejam expressões regulares.</p>
