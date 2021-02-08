@@ -7,7 +7,15 @@
     <description>Audinalytics
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Expressões Regulares e Auditoria: Será que dá _match_?</title>
+      <dc:creator>Marcos F. Silva</dc:creator>
+      <link>audinalytics.netlify.app/posts/2021-02-04-expresses-regulares-e-auditoria-ser-que-d-match</link>
+      <description>O objetivo desse *post* é apresentar possíveis situações em que o uso de expressões regulares pode ser útil em trabalhos de auditoria e com isso estimular os auditores a conhecer um pouquinho mais sobre esse recurso.</description>
+      <guid>audinalytics.netlify.app/posts/2021-02-04-expresses-regulares-e-auditoria-ser-que-d-match</guid>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Audit Analytics</title>
       <dc:creator>Marcos F. Silva</dc:creator>
