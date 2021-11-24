@@ -4,61 +4,107 @@ description: |
   Alguns 'Projetos' nos quais venho trabalhando quando o tempo permite.
 ---
 
-Elenco aqui pequenos tutoriais e alguns "Projetos" nos quais venho trabalhando sempre que tempo permite e que estão disponíveis na internet para quem tiver interesse. 
+Elenco aqui pequenos tutoriais e alguns "Projetos" nos quais venho
+trabalhando sempre que tempo permite e que estão disponíveis na
+internet para quem tiver interesse. 
 
-Tudo o que está aqui apresentado guarda relação com a temática deste _site_ que é o **uso de análise de dados na atividade de auditoria**. 
+Tudo o que está aqui apresentado guarda relação com a temática deste
+_site_ que é o **uso de análise de dados na atividade de auditoria**. 
 
-Este _site_ pode ser visto como um ponto de acesso a esse material que está um pouco espalhado pele internet. Espero também ampliar o que já foi produzido por intermédio de postagens no Blog. Com isso espero continuar tentando aproximar cada vez mais a análise de dados da auditoria por meio de exemplos práticos colhidos sempre que possível no dia a dia da prática auditorial.
+Este _site_ pode ser visto como um ponto de acesso a esse material que
+está um pouco espalhado pele internet. Espero também ampliar o que já foi
+produzido por intermédio de postagens no Blog. Com isso espero continuar
+tentando aproximar cada vez mais a análise de dados da auditoria por meio de
+exemplos práticos colhidos sempre que possível no dia a dia da prática auditorial.
 
 Espero que gostem. Vamos então aos "Projetos" e tutoriais: 
 
 
 # Projeto `ADPrevBook`
 
-O meu "projeto" mais recente é o [**ADPrevBook**](https://marcosfs2006.github.io/ADPrevBook/) um tutorial elaborado usando o pacote `bookdown` que tenta mostrar como os dados dos RPPS (Regimes Próprios de Previdência Social), disponibilizados pela SPREV, podem ser analisados com o objetivo de se adquirir um maior conhecimento sobre os mesmos e sua gestão.  
+O meu "projeto" mais recente é o [**ADPrevBook**](https://marcosfs2006.github.io/ADPrevBook/)
+um tutorial elaborado usando o pacote `bookdown` que tenta mostrar como
+os dados dos RPPS (Regimes Próprios de Previdência Social), disponibilizados
+pela SPREV, podem ser analisados com o objetivo de se adquirir um maior
+conhecimento sobre os mesmos e sua gestão.  
 
-Atualmente minha área de atuação é a auditoria/fiscalização dos Regimes Próprios de Previdência Social e existe uma enorme oportunidade de usar a análise de dados nessa área, visto que uma grande quantidade de dados dessas entidades, para todo o Brasil, são disponibilizadas pela Secretaria de Previdência.
+Atualmente minha área de atuação é a auditoria/fiscalização dos Regimes
+Próprios de Previdência Social e existe uma enorme oportunidade de usar
+a análise de dados nessa área, visto que uma grande quantidade de dados
+dessas entidades, para todo o Brasil, são disponibilizadas pela Secretaria
+de Previdência.
 
-Esse tutorial é uma ampliação e atualização de um documento anterior publicado no `RPubs` (elencado mais abaixo) no qual são apresentadas sugestões de análise de alguns dos conjuntos de dados disponibilizados pela SPREV.
+Esse tutorial é uma ampliação e atualização de um documento anterior
+publicado no `RPubs` (elencado mais abaixo) no qual são apresentadas
+sugestões de análise de alguns dos conjuntos de dados disponibilizados pela SPREV.
 
-O tutorial basicamente mostra o uso das TAACs tradicionais e a elaboração de gráficos. Uma parte importante é a "manipulação de dados" habilidade que o auditor prescisa desenvolver para conseguir realizar suas análises. Não contém, até o momento, nenhum uso de qualquer técnica de _machine learning_, o que está reservado para uma etapa posterior da elaboração deste tutorial.
+O tutorial basicamente mostra o uso das TAACs tradicionais e a elaboração
+de gráficos. Uma parte importante é a "manipulação de dados" habilidade que
+o auditor prescisa desenvolver para conseguir realizar suas análises. Não contém,
+até o momento, nenhum uso de qualquer técnica de _machine learning_, o que está
+reservado para uma etapa posterior da elaboração deste tutorial.
 
 
 # Projeto `ADPrev`
-Outro projeto no qual venho trabalhando é a elaboração de um pacote para o R chamado `ADPrev` cujo objetivo é disponibilizar os dados dos RPPS bem como funções que facilitem a extração de informações úteis dos dados.
+
+Outro projeto no qual venho trabalhando é a elaboração de um pacote para o R
+chamado `ADPrev` cujo objetivo é disponibilizar os dados dos RPPS bem como
+funções que facilitem a extração de informações úteis dos dados.
 
 O link do repositório do pacote no GitHub é <https://github.com/marcosfs2006/ADPrev>
 
 
 # Projeto `PainelPrevRPPS`
 
-Um outro projeto, também relacionado aos RPPS que e tem estreita relação com o anterior é o [**PainelPrevRPPS**](https://marcosfs2006.shinyapps.io/painelprev/), que é um painel que tem por objetivo facilitar a consulta a alguns dos dados dos RPPS brasileiros.
+Um outro projeto, também relacionado aos RPPS que e tem estreita relação com
+o anterior é o [**PainelPrevRPPS**](https://marcosfs2006.shinyapps.io/painelprev/),
+que é um painel que tem por objetivo facilitar a consulta a alguns dos dados
+dos RPPS brasileiros.
 
 O painel foi feito usando o pacote `flexdashboard` em conjunto com o `shiny`.
 
-Esse projeto tem relação com uma etapa importante que é a apresentação dos resultados de uma auditoria. O uso de paineis pode ser uma ferramenta bastante efetiva para o monitoramento de indicadores e avaliação de risco. 
+Esse projeto tem relação com uma etapa importante que é a apresentação dos
+resultados de uma auditoria. O uso de paineis pode ser uma ferramenta bastante
+efetiva para o monitoramento de indicadores e avaliação de risco. 
 
 O R disponibiliza um amplo conjunto de ferramentas que pode auxiliar nessa etapa.
 
 
 # Projeto `LabDadosPrev("RPPS")`
 
-Ainda relacionado aos dois projetos anteriores, o Laboratório de Análise de Dados Previdenciários dos RPPS consiste em disponibilizar notebooks do [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb) com informações sobre os dados dos RPPS e também com _scripts_ em R que podem ser executados pelo usuário sem a necessidade de instalar qualquer software.
+Ainda relacionado aos dois projetos anteriores, o Laboratório de Análise de
+Dados Previdenciários dos RPPS consiste em disponibilizar notebooks do [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb) com informações
+sobre os dados dos RPPS e também com _scripts_ em R que podem ser executados
+pelo usuário sem a necessidade de instalar qualquer software.
 
-A vantagem dos notebooks em relação ao documento `ADPrevBook` é que nos notebooks o usuário pode executar o código apresentado, fazer modificações no mesmo, obter para si uma cópia do notebook e modificar tanto o _script_ quanto o conteúdo textual.
+A vantagem dos notebooks em relação ao documento `ADPrevBook` é que nos
+notebooks o usuário pode executar o código apresentado, fazer modificações
+no mesmo, obter para si uma cópia do notebook e modificar tanto o _script_ 
+quanto o conteúdo textual.
 
-Notebooks também podem ser uma excelente ferramenta para a produção de papéis de trabalho.
+Notebooks também podem ser uma excelente ferramenta para a produção de
+papéis de trabalho.
 
 
 # Análise de Dados Aplicada à Auditoria com R
 
-A possibilidade de usar o R nos notebooks do Google Colab abriu um leque de possibilidades. Uma dessas possibilidades foi a ["migração/atualização" para o Google Colab](https://colab.research.google.com/drive/1nHhHNGRheKaehgQetEh_fPU99CQLwmSt) de um [conjunto de tutoriais](https://nbviewer.jupyter.org/github/marcosfs2006/Usando-R-em-Auditoria/blob/master/ipynb/usando_r_em_auditoria.ipynb) que comecei a elaborar a um bom tempo atrás que chamei de **Usando R em Auditoria**.
+A possibilidade de usar o R nos notebooks do Google Colab abriu um leque de
+possibilidades. Uma dessas possibilidades foi a ["migração/atualização" para o Google Colab](https://colab.research.google.com/drive/1nHhHNGRheKaehgQetEh_fPU99CQLwmSt)
+de um [conjunto de tutoriais](https://nbviewer.jupyter.org/github/marcosfs2006/Usando-R-em-Auditoria/blob/master/ipynb/usando_r_em_auditoria.ipynb) que comecei a elaborar a um bom tempo atrás que chamei
+de **Usando R em Auditoria**.
 
-Estes tutoriais tem por objetivo mostrar como  implementar no R as denominadas `Técnicas de Auditoria Assistidas por Computador - TAAC`.
+Estes tutoriais tem por objetivo mostrar como  implementar no R as 
+denominadas `Técnicas de Auditoria Assistidas por Computador - TAAC`.
 
-Além das TAACs tradicionais também abordei um pouco a elaboração de gráficos, tópico importante mas totalmente negligenciado como ferramenta de auditoria. Estes tutoriais são estáticos e não permitem  ao usuário executar os scripts apresentados, algo que o Google Colab permite fazer.
+Além das TAACs tradicionais também abordei um pouco a elaboração de gráficos,
+tópico importante mas totalmente negligenciado como ferramenta de auditoria.
+Estes tutoriais são estáticos e não permitem  ao usuário executar os scripts
+apresentados, algo que o Google Colab permite fazer.
 
-Uma outra possibilidade que os notebooks oferecem é sua utilização para elaborar 'papeis de trabalho eletrônicos' para documentação de procedimentos de auditoria que utilizem análise de dados. Os notebooks tornam esses procedimentos inteiramente reprodutíveis. 
+Uma outra possibilidade que os notebooks oferecem é sua utilização para
+elaborar 'papeis de trabalho eletrônicos' para documentação de procedimentos
+de auditoria que utilizem análise de dados. Os notebooks tornam esses
+procedimentos inteiramente reprodutíveis. 
 
 
 # Textos no RPubs
