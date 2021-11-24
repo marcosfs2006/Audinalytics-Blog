@@ -6,7 +6,9 @@ site: distill::distill_website
 ---
 
 
->**_Inteligência Analítica_** é a utilização extensiva de dados, análises quantitativas e estatísticas, modelos explicativos e preditivos e gestão baseada em fatos para orientar decisões e ações.
+>**_Inteligência Analítica_** é a utilização extensiva de dados, análises
+quantitativas e estatísticas, modelos explicativos e preditivos e gestão
+baseada em fatos para orientar decisões e ações.
 
 >--- Davenport e Harris (Competição Analítica - Vencendo através da Nova Ciência)
 

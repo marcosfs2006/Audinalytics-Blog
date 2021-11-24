@@ -4,15 +4,28 @@
     <title>Audinalytics</title>
     <link>audinalytics.netlify.app</link>
     <atom:link href="audinalytics.netlify.app/blog.xml" rel="self" type="application/rss+xml"/>
-    <description>Audinalytics
+    <description>Audinalytics: Auditoria com Inteligência Analítica
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Expressões Regulares e Auditoria: Será que dá _match_?</title>
+      <title>Uma Implementação em R do RSF Test</title>
+      <dc:creator>Marcos F. Silva</dc:creator>
+      <link>audinalytics.netlify.app/posts/2021-11-22-uma-implmentao-em-r-do-rsf-test</link>
+      <description>Nesse post nosso objetivo é mostrar como implementar o Relative Size Factor Test no R,
+que, sem dúvida nenhuma, é uma excelente opção para análise de dados em auditoria.</description>
+      <category>Detecção de Fraude</category>
+      <guid>audinalytics.netlify.app/posts/2021-11-22-uma-implmentao-em-r-do-rsf-test</guid>
+      <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
+      <media:content url="audinalytics.netlify.app/posts/2021-11-22-uma-implmentao-em-r-do-rsf-test/uma-implmentao-em-r-do-rsf-test_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Expressões Regulares e Auditoria: Será que dá match?</title>
       <dc:creator>Marcos F. Silva</dc:creator>
       <link>audinalytics.netlify.app/posts/2021-02-04-expresses-regulares-e-auditoria-ser-que-d-match</link>
-      <description>O objetivo desse *post* é apresentar possíveis situações em que o uso de expressões regulares pode ser útil em trabalhos de auditoria e com isso estimular os auditores a conhecer um pouquinho mais sobre esse recurso.</description>
+      <description>O objetivo desse *post* é apresentar possíveis situações em que o uso de
+expressões regulares pode ser útil em trabalhos de auditoria e com isso
+estimular os auditores a conhecer um pouquinho mais sobre esse recurso.</description>
       <guid>audinalytics.netlify.app/posts/2021-02-04-expresses-regulares-e-auditoria-ser-que-d-match</guid>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
     </item>

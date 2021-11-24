@@ -1,10 +1,11 @@
 name: "audinalytics"
 title: "Audinalytics"
 description: |
-  Audinalytics
+  Audinalytics: Auditoria com Inteligência Analítica
 base_url: audinalytics.netlify.app
 output_dir: "_site" 
 navbar:
+  search: false
   right:
     - text: "Home"
       href: index.html

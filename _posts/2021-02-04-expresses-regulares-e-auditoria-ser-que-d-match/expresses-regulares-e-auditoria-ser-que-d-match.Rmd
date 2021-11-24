@@ -1,7 +1,10 @@
 ---
-title: "Expressões Regulares e Auditoria: Será que dá _match_?"
+title: "Expressões Regulares e Auditoria: Será que dá match?"
 description: |
-  O objetivo desse *post* é apresentar possíveis situações em que o uso de expressões regulares pode ser útil em trabalhos de auditoria e com isso estimular os auditores a conhecer um pouquinho mais sobre esse recurso. 
+  O objetivo desse *post* é apresentar possíveis situações em que o uso de
+  expressões regulares pode ser útil em trabalhos de auditoria e com isso
+  estimular os auditores a conhecer um pouquinho mais sobre esse recurso. 
+preview: img/regex.png
 author:
   - name: Marcos F. Silva
     url: {}
@@ -9,44 +12,80 @@ date: 02-07-2021
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_depth: 2
+    toc_float: true
 draft: false
 ---
 
 # Duas situações para motivação...
 
-Imagine que você está realizando uma auditoria e que após executar alguns testes baseados na [*Lei de Benford*](https://www.nexojornal.com.br/ensaio/debate/2020/A-covid-19-e-a-inexor%C3%A1vel-Lei-dos-N%C3%BAmeros-An%C3%B4malos) você tenha descoberto que os valores que iniciam pelos caracteres "`50`"^[Nesse *post* vou adotar a seguinte terminologia: um *caractere* pode ser qualquer dígito, letra, pontuação, etc e uma *string* será um conjunto de caracteres. Assim, "`@marcos2006`", "`123456`" e "`Apt. 708`" são _strings_] tenham fugido muito ao que seria o esperado.
+Imagine que você está realizando uma auditoria e que após executar alguns
+testes baseados na [*Lei de Benford*](https://www.nexojornal.com.br/ensaio/debate/2020/A-covid-19-e-a-inexor%C3%A1vel-Lei-dos-N%C3%BAmeros-An%C3%B4malos) você tenha descoberto que os valores que iniciam pelos
+caracteres "`50`"^[Nesse *post* vou adotar a seguinte terminologia: um
+*caractere* pode ser qualquer dígito, letra, pontuação, etc e uma
+*string* será um conjunto de caracteres. Assim, "`@marcos2006`", "`123456`"
+e "`Apt. 708`" são _strings_] tenham fugido muito ao que seria o esperado.
 
 <aside>
-A Lei de Benford é uma técnica de análise de dados bastante popular em auditoria para a detecção de não conformidades em valores numéricos e integra as denominadas Técnicas de Auditoria Assistidas por Computador - TAACs
+A Lei de Benford é uma técnica de análise de dados bastante popular em
+auditoria para a detecção de não conformidades em valores numéricos e
+integra as denominadas Técnicas de Auditoria Assistidas por Computador - TAACs
 </aside>
 
-Para uma análise mais detalhada das não conformidades identificadas você resolve filtrar a base de dados para obter apenas os registros em que os valores da variável objeto de análise inicie com a *string* "`50`". Expressões regulares podem ser utilizadas para auxiliar na realização desse filtro.
+Para uma análise mais detalhada das não conformidades identificadas você 
+resolve filtrar a base de dados para obter apenas os registros em que os
+valores da variável objeto de análise inicie com a *string* "`50`".
+Expressões regulares podem ser utilizadas para auxiliar na realização desse filtro.
 
-Uma outra situação em que conhecer expressões regulares pode ser bastante útil é realizar filtragem de bases de dados com base em variáveis cujos valores sejam texto. Um exemplo disso seria uma base de dados composta por notas de empenhos e se deseja filtrar os dados com base na variável que contenha a descrição da despesa para identificar os empenhos que tenham relação, por exemplo, com "COVID-19". 
+Uma outra situação em que conhecer expressões regulares pode ser bastante
+útil é realizar filtragem de bases de dados com base em variáveis cujos
+valores sejam texto. Um exemplo disso seria uma base de dados composta por
+notas de empenhos e se deseja filtrar os dados com base na variável que
+contenha a descrição da despesa para identificar os empenhos que tenham
+relação, por exemplo, com "COVID-19". 
 
-Essas são duas situações particulares de um caso mais geral que é aplicar filtros a uma base de dados utilizando expressões regulares.
+Essas são duas situações particulares de um caso mais geral que é aplicar
+filtros a uma base de dados utilizando expressões regulares.
 
-Na prática o uso de expressões regulares é muito mais amplo e auxilia bastante no processo de pré-processamento das bases de dados.
+Na prática o uso de expressões regulares é muito mais amplo e auxilia
+bastante no processo de pré-processamento das bases de dados.
 
-Mas acredito que a essa altura você deva estar se perguntando: "*Legal, mas pra mim isso tá parecendo com o recurso de localizar existente no Word. Qual a vantagem de aprender isso?*"
+Mas acredito que a essa altura você deva estar se perguntando:
+"*Legal, mas pra mim isso tá parecendo com o recurso de localizar existente
+no Word. Qual a vantagem de aprender isso?*"
 
-Diferentemente do recurso de localizar, onde o "*match*" só ocorre se as _strings_ coincidirem de forma exata, as expressões regulares são muito mais flexíveis para a definição de **padrões** que descrevam as _strings_ desejadas e isso pode economizar muito tempo, em razão do auditor não precisar testar várias _strings_ semelhantes.  
+Diferentemente do recurso de localizar, onde o "*match*" só ocorre se
+as _strings_ coincidirem de forma exata, as expressões regulares são
+muito mais flexíveis para a definição de **padrões** que descrevam as
+_strings_ desejadas e isso pode economizar muito tempo, em razão do 
+auditor não precisar testar várias _strings_ semelhantes.  
 
 <aside>
-Diz-se que ocorreu um *match* quando o padrão de *string* expresso pela expressão regular coincide com um subconjunto das *strings* objeto de pesquisa. Isso ficará mais claro adiante.    
+Diz-se que ocorreu um *match* quando o padrão de *string* expresso
+pela expressão regular coincide com um subconjunto das *strings* objeto
+de pesquisa. Isso ficará mais claro adiante.    
 </aside>
 
 
 
 # Mas o que é uma expressão regular?
 
-De acordo com o [tutorial contido no pacote _stringr_](https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html), expressões regulares são ferramentas para a descrição de padrões em _strings_ de caracteres de forma concisa e flexível. 
+De acordo com o [tutorial contido no pacote _stringr_](https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html), expressões regulares são ferramentas para a descrição de padrões em
+_strings_ de caracteres de forma concisa e flexível. 
 
-Não é minha intenção que este _post_ seja um tutorial sobre expressões regulares, mas chamar a atenção dos auditores para esse recurso, mostrar possibilidades de aplicações e com isso estimular um aprofundamento dos conhecimentos. E para isso elenco mais adiante alguns recursos disponíveis na internet.
+Não é minha intenção que este _post_ seja um tutorial sobre expressões
+regulares, mas chamar a atenção dos auditores para esse recurso, mostrar
+possibilidades de aplicações e com isso estimular um aprofundamento dos
+conhecimentos. E para isso elenco mais adiante alguns recursos disponíveis
+na internet.
 
-Vou usar inicialmente alguns exemplos muito simples para fins didáticos e depois faço aplicações em um conjunto de dados mais realista.
+Vou usar inicialmente alguns exemplos muito simples para fins didáticos e
+depois faço aplicações em um conjunto de dados mais realista.
 
-Uso funções do pacote `stringr` para demonstrar o uso das expressões regulares e aproveito para chamar a atenção dos auditores para o fato de que manipular valores textuais é uma habilidade que pode ser muito útil.
+Uso funções do pacote `stringr` para demonstrar o uso das expressões regulares
+e aproveito para chamar a atenção dos auditores para o fato de que manipular
+valores textuais é uma habilidade que pode ser muito útil.
 
 Considere o seguinte conjunto de _strings_:
 
@@ -58,50 +97,81 @@ nomes<- c("Marcolino", "Marcos", "José", "joão", "Marcio")
 nomes
 ```
 
-Vamos agora supor que eu queira identificar nesse conjunto de _strings_ (cada nome é uma _string_) aquelas que **comecem** com a letra jota maiúscula ou minúscula. Como deve ser a expressão regular que 'casa' com esse padrão?
+Vamos agora supor que eu queira identificar nesse conjunto
+de _strings_ (cada nome é uma _string_) aquelas que **comecem** com
+a letra jota maiúscula ou minúscula. Como deve ser a expressão 
+que 'casa' com esse padrão?
 
-A função `str_view()` do pacote `stringr` permite verificar para quais _strings_ houve um "*match*" com o padrão definido pela expressão regular. No exemplo, o padrão é: "_string_ que inicia com a letra jota".  
+A função `str_view()` do pacote `stringr` permite verificar para quais
+_strings_ houve um "*match*" com o padrão definido pela expressão
+regular. No exemplo, o padrão é: "_string_ que inicia com a letra jota".  
 
 ```{r}
 str_view(string=nomes, pattern="^[Jj]")
 ```
 
-Como é possível ver pelo resultado, as _strings_ `José` e `joão` 'casaram' com a expressão regular `^[Jj]` que define o padrão desejado, ou seja, iniciam com a letra jota, seja ela maiúscula ou minúscula.
+Como é possível ver pelo resultado, as _strings_ `José` e `joão` 'casaram' com 
+a expressão regular `^[Jj]` que define o padrão desejado, ou seja, iniciam com
+a letra jota, seja ela maiúscula ou minúscula.
 
-A definição de expressões regulares faz uso de caracteres que possuem significado especial os quais são denominados de **metacaracteres**. Os metacaracteres `^` e `[]` tem funções bem específicas.  
+A definição de expressões regulares faz uso de caracteres que possuem
+significado especial os quais são denominados de **metacaracteres**. Os
+metacaracteres `^` e `[]` tem funções bem específicas.  
 
-A indicação de que a letra jota deve estar no ínício da _string_ é dada pelo metacaractere `^`, enquanto a indicação que o jota poderia ser maiúsculo ou minúsculo é dada pelo metacaractere `[]` que, no exemplo, informa que a _string_ pode iniciar com qualquer dos caracteres em seu interior.
+A indicação de que a letra jota deve estar no ínício da _string_ é dada 
+pelo metacaractere `^`, enquanto a indicação que o jota poderia ser
+maiúsculo ou minúsculo é dada pelo metacaractere `[]` que, no exemplo,
+informa que a _string_ pode iniciar com qualquer dos caracteres
+em seu interior.
 
 E se quisermos identificar as _strings_ que terminem com "o" ou "os"?
 
 ```{r}
 str_view(string=nomes, pattern="os?$")
 ```
-Esse exemplo, embora ainda simples, já começa a indicar que as expressões regulares podem ser bem complexas. E de fato são. 
 
-Nesse exemplo, aparecem mais dois novos metacaracteres: `$` e `?`. O metacaractere `$` é responsável por indicar que os caracteres desejados devem estar no final da _string_ enquanto o metacaractere `?` informa que o caractere que o precede é opcional, podendo aparecer ou não na *string*. Assim, essa expressão regular define o seguinte padrão: _strings_ que terminem com o caractere `o` sucedido ou não do caractere `s`.  
+Esse exemplo, embora ainda simples, já começa a indicar que as expressões
+regulares podem ser bem complexas. E de fato são. 
+
+Nesse exemplo, aparecem mais dois novos metacaracteres: `$` e `?`. 
+O metacaractere `$` é responsável por indicar que os caracteres desejados
+devem estar no final da _string_ enquanto o metacaractere `?` informa que o
+caractere que o precede é opcional, podendo aparecer ou não na *string*. 
+Assim, essa expressão regular define o seguinte padrão: _strings_ que
+terminem com o caractere `o` sucedido ou não do caractere `s`.  
 
 ```{r}
 str_view(string=nomes, pattern="[nc]os?$")
 ```
-No exemplo acima, a expressão regular define o seguinte padrão: o caractere `o` precedido dos caracteres `n` ou `c` e sucedido ou não do caractere `s` no final da _string_. 
 
-Naturalmente que existem muitos outros metacaracteres que não foram abordados nesses exemplos simples cujo objetivo é apenas passar a ideia do que sejam expressões regulares.
+No exemplo acima, a expressão regular define o seguinte padrão: o caractere
+`o` precedido dos caracteres `n` ou `c` e sucedido ou não do caractere
+`s` no final da _string_. 
 
-Convido o leitor a consultar as referências elencadas mais adiante para um tratamento mais aprofundado do assunto.
+Naturalmente que existem muitos outros metacaracteres que não foram abordados
+nesses exemplos simples cujo objetivo é apenas passar a ideia do que sejam
+expressões regulares.
 
-Agora vou usar um conjunto de dados um pouco mais realista. Trata-se de uma relação de empenhos  obtida no [portal da transparência](https://transparencia.pb.gov.br/despesas/notas-de-empenho) do Tribunal de Contas do Estado da Paraíba.
+Convido o leitor a consultar as referências elencadas mais adiante para um
+tratamento mais aprofundado do assunto.
+
+Agora vou usar um conjunto de dados um pouco mais realista. Trata-se de uma
+relação de empenhos  obtida no [portal da transparência](https://transparencia.pb.gov.br/despesas/notas-de-empenho) 
+do Tribunal de Contas do Estado da Paraíba.
 
 <aside>
-A relação de empenhos refere-se apenas à Secretaria Estado de Educação e compreende os meses de janeiro a dezembro de 2020.
+A relação de empenhos refere-se apenas à Secretaria Estado de Educação e
+compreende os meses de janeiro a dezembro de 2020.
 </aside>
 
 ```{r}
-empenhos <- read_csv("C:\\Users\\Marcos\\OneDrive\\Marcos\\audinalytics-dados\\EmpenhosLista.csv")
+empenhos <- read_csv("_EmpenhosLista.csv")
 head(empenhos)
 ```
 
-Durante o processo de exportação dos dados do *site*, algumas colunas indesejadas foram exportadas também, são elas: `Textbox7` e `Valor_Despesa`. Vou eliminar essas colunas da base de dados:
+Durante o processo de exportação dos dados do *site*, algumas colunas
+indesejadas foram exportadas também, são elas: `Textbox7` e `Valor_Despesa`.
+Vou eliminar essas colunas da base de dados:
 
 ```{r}
 library(dplyr)
@@ -111,15 +181,23 @@ empenhos <- empenhos %>%
 glimpse(empenhos)
 ```
 
-A variável `Valor_Despesa1` foi importada como caractere em vez de número. Com o uso de expressões regulares é possível fazer o pré-processamento com vistas à conversão para o formato numérico.
+A variável `Valor_Despesa1` foi importada como caractere em vez de número.
+Com o uso de expressões regulares é possível fazer o pré-processamento com
+vistas à conversão para o formato numérico.
 
-Várias funções no R recebem como argumentos expressões regulares. No código a seguir vou utilizar a função `str_replace_all()` do pacote `stringr` para realizar a conversão da variável `Valor_Despesa1` para o formato numérico.
+Várias funções no R recebem como argumentos expressões regulares. No código
+a seguir vou utilizar a função `str_replace_all()` do pacote `stringr` para
+realizar a conversão da variável `Valor_Despesa1` para o formato numérico.
 
-Essa função recebe como argumentos a variável contendo as _strings_, a expressão regular definindo o padrão a ser 'casado' e a *string* a ser utilizada para substituir a *string* que deu *match* com o padrão especificado. 
+Essa função recebe como argumentos a variável contendo as _strings_, a
+expressão regular definindo o padrão a ser 'casado' e a *string* a ser
+utilizada para substituir a *string* que deu *match* com o padrão especificado. 
 
-Para que a conversão possa ocorrer será necessário: (1) "remover" os pontos e (2) "substituir" as vírgulas por pontos.
+Para que a conversão possa ocorrer será necessário: (1) "remover" os pontos
+e (2) "substituir" as vírgulas por pontos.
 
-No código a seguir eu utilizo a expressão regular `\\.` para 'casar' os pontos e substituir por uma *string* nula. 
+No código a seguir eu utilizo a expressão regular `\\.` para 'casar' os pontos
+e substituir por uma *string* nula. 
 
 ```{r}
 empenhos <- empenhos %>% 
@@ -127,7 +205,11 @@ empenhos <- empenhos %>%
 glimpse(empenhos)
 ```
 
-Como pode ser visto, os pontos foram removidos. A expressão regular `\\.` 'casa' os pontos. Como o ponto tem um significado especial em expressões regulares, para que seja possível casar o 'ponto literal' é necessário colocar as duas barras antes dele. Em expressões regulares, o ponto tem a função de 'casar' com qualquer caractere.
+Como pode ser visto, os pontos foram removidos. A expressão
+regular `\\.` 'casa' os pontos. Como o ponto tem um significado especial
+em expressões regulares, para que seja possível casar o 'ponto literal' é 
+necessário colocar as duas barras antes dele. Em expressões regulares, o
+ponto tem a função de 'casar' com qualquer caractere.
 
 
 Agora é necessário substituir a vírgula por ponto.
@@ -138,7 +220,8 @@ empenhos <- empenhos %>%
 glimpse(empenhos)
 ```
 
-As vírgulas foram substituídas por pontos. Agora é só converter a variável para o formato numérico.
+As vírgulas foram substituídas por pontos. Agora é só converter a variável
+para o formato numérico.
 
 ```{r}
 empenhos <- empenhos %>% 
@@ -146,9 +229,12 @@ empenhos <- empenhos %>%
 glimpse(empenhos)
 ```
 
-Agora variável `Valor_Despesa1` está no formato numérico.
+Agora a variável `Valor_Despesa1` está no formato numérico.
 
-Continuando com nosso exemplo, vamos supor que eu queira filtrar a base de dados de forma que apenas os valores dos empenhos iniciados por "50" sejam selecionados. Usando a expressão regular já vista anteriormente posso fazer isso da seguinte forma:
+Continuando com nosso exemplo, vamos supor que eu queira filtrar a base de
+dados de forma que apenas os valores dos empenhos iniciados por "50" sejam
+selecionados. Usando a expressão regular já vista anteriormente posso fazer
+isso da seguinte forma:
 
 ```{r}
 empenhos_50 <- empenhos %>% 
@@ -156,9 +242,16 @@ empenhos_50 <- empenhos %>%
 knitr::kable(head(empenhos_50))
 ```
 
-Mais um exemplo. A variável `DS_CREDOR` possui a identificação do credor do empenho. Essa identificação consiste do número do CNPJ seguido do nome do fornecedor caso esse seja pessoa jurídica. No caso de pessoa física, essa descrição consiste de parte do CPF seguido do nome da pessoa.
+Mais um exemplo. A variável `DS_CREDOR` possui a identificação do credor do 
+empenho. Essa identificação consiste do número do CNPJ seguido do nome do
+fornecedor caso esse seja pessoa jurídica. No caso de pessoa física, essa
+descrição consiste de parte do CPF seguido do nome da pessoa.
 
-Vamos supor que eu queira criar um novo campo na base de dados contendo apenas o CNPJ. Como eu posso fazer isso usando expressões regulares? Eu preciso criar uma expressão regular que defina o padrão de um CNPJ, que é: dois dígitos, ponto, três digitos, ponto, três dígitos, barra, três zeros, um, hífen, dois dígitos. Como eu crio uma expressão regular que "case" com esse padrão?
+Vamos supor que eu queira criar um novo campo na base de dados contendo apenas
+o CNPJ. Como eu posso fazer isso usando expressões regulares? Eu preciso criar
+uma expressão regular que defina o padrão de um CNPJ, que é: dois dígitos,
+ponto, três digitos, ponto, três dígitos, barra, três zeros, um, hífen, dois
+dígitos. Como eu crio uma expressão regular que "case" com esse padrão?
 
 Uma possibilidade:
 
@@ -166,7 +259,10 @@ Uma possibilidade:
 padrao_cnpj <- "\\d{2}\\.\\d{3}\\.\\d{3}/0001-\\d{2}"
 ```
 
-Explicando um pouco. O metacaractere `\\d{n}` indica que o padrão buscado é `n dígitos`. O `\\.` indica que queremos 'casar' o ponto. Como o ponto possui um significado especial nas expressões regulares (é um metacaractere), é necessário precedê-lo com as duas barras.
+Explicando um pouco. O metacaractere `\\d{n}` indica que o padrão buscado
+é `n dígitos`. O `\\.` indica que queremos 'casar' o ponto. Como o ponto 
+possui um significado especial nas expressões regulares (é um metacaractere),
+é necessário precedê-lo com as duas barras.
 
 Vamos agora criar a nova coluna.
 
@@ -177,7 +273,12 @@ empenhos <- empenhos %>%
 glimpse(empenhos)
 ```
 
-A nova coluna foi criada apenas com o CNPJ como desejado. Mas vamos supor ainda que eu queira cruzar esta base de dados com uma outra tomando o CNPJ como chave para o cruzamento. Ocorre que nessa outra base o CNPJ está sem pontuação, ou seja, os CNPJ aparecem dessa forma: "08778250000169". Assim eu preciso remover a pontuação na variável recém criada. Mais uma vez vou utilizar expressão regular.
+A nova coluna foi criada apenas com o CNPJ como desejado. Mas vamos supor
+ainda que eu queira cruzar esta base de dados com uma outra tomando o CNPJ
+como chave para o cruzamento. Ocorre que nessa outra base o CNPJ está sem 
+pontuação, ou seja, os CNPJ aparecem dessa forma: "08778250000169".
+Assim eu preciso remover a pontuação na variável recém criada. Mais
+uma vez vou utilizar expressão regular.
 
 ```{r}
 empenhos <- empenhos %>% 
@@ -187,25 +288,35 @@ glimpse(empenhos)
 
 A expressão regular `[[:punct:]]` "casa" com os sinais de pontuação.
 
-Mais um exemplo para finalizar. A variável `CD_ORGAO` contém a descrição da despesa objeto do empenho. Como poderíamos identificar os empenhos que se refiram a compra de merenda escolar, por exemplo? 
+Mais um exemplo para finalizar. A variável `CD_ORGAO` contém a descrição da
+despesa objeto do empenho. Como poderíamos identificar os empenhos que se
+refiram a compra de merenda escolar, por exemplo? 
 
-No código a seguir vou usar expressão regular para "casar" a *string* `MERENDA` na descrição da despesa.
+No código a seguir vou usar expressão regular para "casar" a *string*
+`MERENDA` na descrição da despesa.
 
 ```{r}
 empenhos_merenda <- empenhos %>% 
                       filter(str_detect(CD_ORGAO, "MERENDA")) 
 ```
 
-O novo conjunto de dados `empenhos_merenda` contém apenas os registros referentes aos empenhos em que a *string* `MERENDA` aparece na descrição da despesa.
+O novo conjunto de dados `empenhos_merenda` contém apenas os registros
+referentes aos empenhos em que a *string* `MERENDA` aparece na
+descrição da despesa.
 
-Espero que estes exemplos tenham dado uma ideia do poder que as expressões regulares trazem para a análise de dados e, consequentemente, para a auditoria e que o *post* de modo geral tenha aguçado sua curiosidade para aprender mais sobre esta ferramenta fantástica.
+Espero que estes exemplos tenham dado uma ideia do poder que as expressões
+regulares trazem para a análise de dados e, consequentemente, para a
+auditoria e que o *post* de modo geral tenha aguçado sua curiosidade
+para aprender mais sobre esta ferramenta fantástica.
 
 
 # Onde aprofundar os conhecimentos
 
-Com uma rápida pesquisa na internet é possível encontrar uma grande quantidade de material sobre expressões regulares. 
+Com uma rápida pesquisa na internet é possível encontrar uma grande quantidade
+de material sobre expressões regulares. 
 
-Listo a seguir alguns materiais que vão te ajudar a aprofundar o conhecimento sobre esse tópico.
+Listo a seguir alguns materiais que vão te ajudar a aprofundar o
+conhecimento sobre esse tópico.
 
 * [Introdução ao regex com R](https://app.consudata.com.br/shiny/stringr/)    
 * [Basic Regular Expressions in R - Cheat Sheet](https://rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf)    

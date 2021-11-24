@@ -56,7 +56,7 @@ code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -85,10 +85,11 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
+
   <!--radix_placeholder_meta_tags-->
-  <title>Expressões Regulares e Auditoria: Será que dá _match_?</title>
+  <title>Expressões Regulares e Auditoria: Será que dá match?</title>
   
-  <meta property="description" itemprop="description" content="O objetivo desse *post* é apresentar possíveis situações em que o uso de expressões regulares pode ser útil em trabalhos de auditoria e com isso estimular os auditores a conhecer um pouquinho mais sobre esse recurso."/>
+  <meta property="description" itemprop="description" content="O objetivo desse *post* é apresentar possíveis situações em que o uso de&#10;expressões regulares pode ser útil em trabalhos de auditoria e com isso&#10;estimular os auditores a conhecer um pouquinho mais sobre esse recurso."/>
   
   
   <!--  https://schema.org/Article -->
@@ -97,26 +98,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta name="article:author" content="Marcos F. Silva"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Expressões Regulares e Auditoria: Será que dá _match_?"/>
+  <meta property="og:title" content="Expressões Regulares e Auditoria: Será que dá match?"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="O objetivo desse *post* é apresentar possíveis situações em que o uso de expressões regulares pode ser útil em trabalhos de auditoria e com isso estimular os auditores a conhecer um pouquinho mais sobre esse recurso."/>
+  <meta property="og:description" content="O objetivo desse *post* é apresentar possíveis situações em que o uso de&#10;expressões regulares pode ser útil em trabalhos de auditoria e com isso&#10;estimular os auditores a conhecer um pouquinho mais sobre esse recurso."/>
   <meta property="og:locale" content="en_US"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Expressões Regulares e Auditoria: Será que dá _match_?"/>
-  <meta property="twitter:description" content="O objetivo desse *post* é apresentar possíveis situações em que o uso de expressões regulares pode ser útil em trabalhos de auditoria e com isso estimular os auditores a conhecer um pouquinho mais sobre esse recurso."/>
+  <meta property="twitter:title" content="Expressões Regulares e Auditoria: Será que dá match?"/>
+  <meta property="twitter:description" content="O objetivo desse *post* é apresentar possíveis situações em que o uso de&#10;expressões regulares pode ser útil em trabalhos de auditoria e com isso&#10;estimular os auditores a conhecer um pouquinho mais sobre esse recurso."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Expressões Regulares e Auditoria: Será que dá _match_?"]},{"type":"character","attributes":{},"value":["O objetivo desse *post* é apresentar possíveis situações em que o uso de expressões regulares pode ser útil em trabalhos de auditoria e com isso estimular os auditores a conhecer um pouquinho mais sobre esse recurso. \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Marcos F. Silva"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["02-07-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Expressões Regulares e Auditoria: Será que dá match?"]},{"type":"character","attributes":{},"value":["O objetivo desse *post* é apresentar possíveis situações em que o uso de\nexpressões regulares pode ser útil em trabalhos de auditoria e com isso\nestimular os auditores a conhecer um pouquinho mais sobre esse recurso. \n"]},{"type":"character","attributes":{},"value":["img/regex.png"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Marcos F. Silva"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["02-07-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["expresses-regulares-e-auditoria-ser-que-d-match_files/anchor-4.2.2/anchor.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/bowser-1.9.3/bowser.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/distill-2.2.21/template.v2.js","expresses-regulares-e-auditoria-ser-que-d-match_files/htmlwidgets-1.5.3/htmlwidgets.js","expresses-regulares-e-auditoria-ser-que-d-match_files/jquery-1.11.3/jquery.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/popper-2.6.0/popper.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/str_view-0.1.0/str_view.css","expresses-regulares-e-auditoria-ser-que-d-match_files/str_view-binding-1.4.0/str_view.js","expresses-regulares-e-auditoria-ser-que-d-match_files/tippy-6.2.7/tippy-bundle.umd.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/tippy-6.2.7/tippy-light-border.css","expresses-regulares-e-auditoria-ser-que-d-match_files/tippy-6.2.7/tippy.css","expresses-regulares-e-auditoria-ser-que-d-match_files/tippy-6.2.7/tippy.umd.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["expresses-regulares-e-auditoria-ser-que-d-match_files/anchor-4.2.2/anchor.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/bowser-1.9.3/bowser.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/distill-2.2.21/template.v2.js","expresses-regulares-e-auditoria-ser-que-d-match_files/htmlwidgets-1.5.4/htmlwidgets.js","expresses-regulares-e-auditoria-ser-que-d-match_files/jquery-3.6.0/jquery-3.6.0.js","expresses-regulares-e-auditoria-ser-que-d-match_files/jquery-3.6.0/jquery-3.6.0.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/jquery-3.6.0/jquery-3.6.0.min.map","expresses-regulares-e-auditoria-ser-que-d-match_files/popper-2.6.0/popper.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/str_view-0.1.0/str_view.css","expresses-regulares-e-auditoria-ser-que-d-match_files/str_view-binding-1.4.0/str_view.js","expresses-regulares-e-auditoria-ser-que-d-match_files/tippy-6.2.7/tippy-bundle.umd.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/tippy-6.2.7/tippy-light-border.css","expresses-regulares-e-auditoria-ser-que-d-match_files/tippy-6.2.7/tippy.css","expresses-regulares-e-auditoria-ser-que-d-match_files/tippy-6.2.7/tippy.umd.min.js","expresses-regulares-e-auditoria-ser-que-d-match_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1263,7 +1264,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -1434,10 +1438,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="expresses-regulares-e-auditoria-ser-que-d-match_files/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+  <script src="expresses-regulares-e-auditoria-ser-que-d-match_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
   <link href="expresses-regulares-e-auditoria-ser-que-d-match_files/str_view-0.1.0/str_view.css" rel="stylesheet" />
   <script src="expresses-regulares-e-auditoria-ser-que-d-match_files/str_view-binding-1.4.0/str_view.js"></script>
-  <script src="expresses-regulares-e-auditoria-ser-que-d-match_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="expresses-regulares-e-auditoria-ser-que-d-match_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="expresses-regulares-e-auditoria-ser-que-d-match_files/popper-2.6.0/popper.min.js"></script>
   <link href="expresses-regulares-e-auditoria-ser-que-d-match_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="expresses-regulares-e-auditoria-ser-que-d-match_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -1457,7 +1461,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Expressões Regulares e Auditoria: Será que dá _match_?","description":"O objetivo desse *post* é apresentar possíveis situações em que o uso de expressões regulares pode ser útil em trabalhos de auditoria e com isso estimular os auditores a conhecer um pouquinho mais sobre esse recurso.","authors":[{"author":"Marcos F. Silva","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-07T00:00:00.000-03:00","citationText":"Silva, 2021"}
+{"title":"Expressões Regulares e Auditoria: Será que dá match?","description":"O objetivo desse *post* é apresentar possíveis situações em que o uso de\nexpressões regulares pode ser útil em trabalhos de auditoria e com isso\nestimular os auditores a conhecer um pouquinho mais sobre esse recurso.","authors":[{"author":"Marcos F. Silva","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-07T00:00:00.000-03:00","citationText":"Silva, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1480,6 +1484,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#duas-situações-para-motivação">Duas situações para motivação…</a></li>
+<li><a href="#mas-o-que-é-uma-expressão-regular">Mas o que é uma expressão regular?</a></li>
+<li><a href="#onde-aprofundar-os-conhecimentos">Onde aprofundar os conhecimentos</a></li>
+</ul>
+</nav>
+</div>
 <h1 id="duas-situações-para-motivação">Duas situações para motivação…</h1>
 <p>Imagine que você está realizando uma auditoria e que após executar alguns testes baseados na <a href="https://www.nexojornal.com.br/ensaio/debate/2020/A-covid-19-e-a-inexor%C3%A1vel-Lei-dos-N%C3%BAmeros-An%C3%B4malos"><em>Lei de Benford</em></a> você tenha descoberto que os valores que iniciam pelos caracteres “<code>50</code>”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> tenham fugido muito ao que seria o esperado.</p>
 <aside>
@@ -1511,15 +1525,15 @@ Diz-se que ocorreu um <em>match</em> quando o padrão de <em>string</em> express
 </div>
 <pre><code>[1] &quot;Marcolino&quot; &quot;Marcos&quot;    &quot;José&quot;      &quot;joão&quot;      &quot;Marcio&quot;   </code></pre>
 </div>
-<p>Vamos agora supor que eu queira identificar nesse conjunto de <em>strings</em> (cada nome é uma <em>string</em>) aquelas que <strong>comecem</strong> com a letra jota maiúscula ou minúscula. Como deve ser a expressão regular que ‘casa’ com esse padrão?</p>
+<p>Vamos agora supor que eu queira identificar nesse conjunto de <em>strings</em> (cada nome é uma <em>string</em>) aquelas que <strong>comecem</strong> com a letra jota maiúscula ou minúscula. Como deve ser a expressão que ‘casa’ com esse padrão?</p>
 <p>A função <code>str_view()</code> do pacote <code>stringr</code> permite verificar para quais <em>strings</em> houve um “<em>match</em>” com o padrão definido pela expressão regular. No exemplo, o padrão é: “<em>string</em> que inicia com a letra jota”.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_view.html'>str_view</a></span><span class='op'>(</span>string<span class='op'>=</span><span class='va'>nomes</span>, pattern<span class='op'>=</span><span class='st'>"^[Jj]"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="htmlwidget-0a928ceef5ebad63a69b" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0a928ceef5ebad63a69b">{"x":{"html":"<ul>\n  <li>Marcolino<\/li>\n  <li>Marcos<\/li>\n  <li><span class='match'>J<\/span>osé<\/li>\n  <li><span class='match'>j<\/span>oão<\/li>\n  <li>Marcio<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e9f1b5c951f974b6b816" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e9f1b5c951f974b6b816">{"x":{"html":"<ul>\n  <li>Marcolino<\/li>\n  <li>Marcos<\/li>\n  <li><span class='match'>J<\/span>osé<\/li>\n  <li><span class='match'>j<\/span>oão<\/li>\n  <li>Marcio<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>Como é possível ver pelo resultado, as <em>strings</em> <code>José</code> e <code>joão</code> ‘casaram’ com a expressão regular <code>^[Jj]</code> que define o padrão desejado, ou seja, iniciam com a letra jota, seja ela maiúscula ou minúscula.</p>
 <p>A definição de expressões regulares faz uso de caracteres que possuem significado especial os quais são denominados de <strong>metacaracteres</strong>. Os metacaracteres <code>^</code> e <code>[]</code> tem funções bem específicas.</p>
@@ -1530,8 +1544,8 @@ Diz-se que ocorreu um <em>match</em> quando o padrão de <em>string</em> express
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_view.html'>str_view</a></span><span class='op'>(</span>string<span class='op'>=</span><span class='va'>nomes</span>, pattern<span class='op'>=</span><span class='st'>"os?$"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="htmlwidget-16ecc6f7cad9d32af962" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-16ecc6f7cad9d32af962">{"x":{"html":"<ul>\n  <li>Marcolin<span class='match'>o<\/span><\/li>\n  <li>Marc<span class='match'>os<\/span><\/li>\n  <li>José<\/li>\n  <li>joã<span class='match'>o<\/span><\/li>\n  <li>Marci<span class='match'>o<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-dc24add933c80b8c4673" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dc24add933c80b8c4673">{"x":{"html":"<ul>\n  <li>Marcolin<span class='match'>o<\/span><\/li>\n  <li>Marc<span class='match'>os<\/span><\/li>\n  <li>José<\/li>\n  <li>joã<span class='match'>o<\/span><\/li>\n  <li>Marci<span class='match'>o<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>Esse exemplo, embora ainda simples, já começa a indicar que as expressões regulares podem ser bem complexas. E de fato são.</p>
 <p>Nesse exemplo, aparecem mais dois novos metacaracteres: <code>$</code> e <code>?</code>. O metacaractere <code>$</code> é responsável por indicar que os caracteres desejados devem estar no final da <em>string</em> enquanto o metacaractere <code>?</code> informa que o caractere que o precede é opcional, podendo aparecer ou não na <em>string</em>. Assim, essa expressão regular define o seguinte padrão: <em>strings</em> que terminem com o caractere <code>o</code> sucedido ou não do caractere <code>s</code>.</p>
@@ -1540,8 +1554,8 @@ Diz-se que ocorreu um <em>match</em> quando o padrão de <em>string</em> express
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_view.html'>str_view</a></span><span class='op'>(</span>string<span class='op'>=</span><span class='va'>nomes</span>, pattern<span class='op'>=</span><span class='st'>"[nc]os?$"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="htmlwidget-e22157a523d714f895ee" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e22157a523d714f895ee">{"x":{"html":"<ul>\n  <li>Marcoli<span class='match'>no<\/span><\/li>\n  <li>Mar<span class='match'>cos<\/span><\/li>\n  <li>José<\/li>\n  <li>joão<\/li>\n  <li>Marcio<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-43e555c854af460a32c2" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-43e555c854af460a32c2">{"x":{"html":"<ul>\n  <li>Marcoli<span class='match'>no<\/span><\/li>\n  <li>Mar<span class='match'>cos<\/span><\/li>\n  <li>José<\/li>\n  <li>joão<\/li>\n  <li>Marcio<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>No exemplo acima, a expressão regular define o seguinte padrão: o caractere <code>o</code> precedido dos caracteres <code>n</code> ou <code>c</code> e sucedido ou não do caractere <code>s</code> no final da <em>string</em>.</p>
 <p>Naturalmente que existem muitos outros metacaracteres que não foram abordados nesses exemplos simples cujo objetivo é apenas passar a ideia do que sejam expressões regulares.</p>
@@ -1552,19 +1566,19 @@ A relação de empenhos refere-se apenas à Secretaria Estado de Educação e co
 </aside>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"C:\\Users\\Marcos\\OneDrive\\Marcos\\audinalytics-dados\\EmpenhosLista.csv"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"_EmpenhosLista.csv"</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 6 x 9
-  DT_EMPENHO DS_TIPO NumNE CD_ORGAO ElementoDespesa DS_CREDOR
-  &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;           &lt;chr&gt;    
-1 23/01/2020 PRINCI~ 2020~ VALOR D~ 11-VENCIMENTOS~ 08.778.2~
-2 23/01/2020 PRINCI~ 2020~ VALOR D~ 11-VENCIMENTOS~ 08.778.2~
-3 23/01/2020 PRINCI~ 2020~ VALOR D~ 11-VENCIMENTOS~ 08.778.2~
-4 23/01/2020 PRINCI~ 2020~ VALOR D~ 05-OUTROS BENE~ 08.778.2~
-5 23/01/2020 PRINCI~ 2020~ VALOR D~ 11-VENCIMENTOS~ 08.778.2~
-6 23/01/2020 PRINCI~ 2020~ VALOR D~ 11-VENCIMENTOS~ 08.778.2~
+  DT_EMPENHO DS_TIPO   NumNE       CD_ORGAO  ElementoDespesa DS_CREDOR
+  &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;           &lt;chr&gt;    
+1 23/01/2020 PRINCIPAL 2020NE00001 VALOR DA~ 11-VENCIMENTOS~ 08.778.2~
+2 23/01/2020 PRINCIPAL 2020NE00002 VALOR DA~ 11-VENCIMENTOS~ 08.778.2~
+3 23/01/2020 PRINCIPAL 2020NE00003 VALOR DA~ 11-VENCIMENTOS~ 08.778.2~
+4 23/01/2020 PRINCIPAL 2020NE00004 VALOR DA~ 05-OUTROS BENE~ 08.778.2~
+5 23/01/2020 PRINCIPAL 2020NE00005 VALOR DA~ 11-VENCIMENTOS~ 08.778.2~
+6 23/01/2020 PRINCIPAL 2020NE00006 VALOR DA~ 11-VENCIMENTOS~ 08.778.2~
 # ... with 3 more variables: Valor_Despesa1 &lt;chr&gt;, Textbox7 &lt;chr&gt;,
 #   Valor_Despesa &lt;chr&gt;</code></pre>
 </div>
@@ -1572,21 +1586,21 @@ A relação de empenhos refere-se apenas à Secretaria Estado de Educação e co
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
-<span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'>%&gt;%</span> 
+<span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
               <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='va'>Textbox7</span>, <span class='op'>-</span><span class='va'>Valor_Despesa</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://tibble.tidyverse.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
+<span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>Rows: 6,781
 Columns: 7
-$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;,...
-$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;P...
-$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE0000...
-$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA ED...
-$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSO...
-$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTAD...
-$ Valor_Despesa1  &lt;chr&gt; &quot;4.999.161,91&quot;, &quot;2.388,72&quot;, &quot;103.288,98&quot;,...</code></pre>
+$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;2~
+$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRIN~
+$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE00003&quot;,~
+$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA EDUCA~
+$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSOAL ~
+$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTADO D~
+$ Valor_Despesa1  &lt;chr&gt; &quot;4.999.161,91&quot;, &quot;2.388,72&quot;, &quot;103.288,98&quot;, &quot;1~</code></pre>
 </div>
 <p>A variável <code>Valor_Despesa1</code> foi importada como caractere em vez de número. Com o uso de expressões regulares é possível fazer o pré-processamento com vistas à conversão para o formato numérico.</p>
 <p>Várias funções no R recebem como argumentos expressões regulares. No código a seguir vou utilizar a função <code>str_replace_all()</code> do pacote <code>stringr</code> para realizar a conversão da variável <code>Valor_Despesa1</code> para o formato numérico.</p>
@@ -1595,63 +1609,63 @@ $ Valor_Despesa1  &lt;chr&gt; &quot;4.999.161,91&quot;, &quot;2.388,72&quot;, &q
 <p>No código a seguir eu utilizo a expressão regular <code>\\.</code> para ‘casar’ os pontos e substituir por uma <em>string</em> nula.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'>%&gt;%</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
               <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Valor_Despesa1 <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='va'>Valor_Despesa1</span>, <span class='st'>"\\."</span>, <span class='st'>""</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'><a href='https://tibble.tidyverse.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
+<span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>Rows: 6,781
 Columns: 7
-$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;,...
-$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;P...
-$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE0000...
-$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA ED...
-$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSO...
-$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTAD...
-$ Valor_Despesa1  &lt;chr&gt; &quot;4999161,91&quot;, &quot;2388,72&quot;, &quot;103288,98&quot;, &quot;14...</code></pre>
+$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;2~
+$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRIN~
+$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE00003&quot;,~
+$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA EDUCA~
+$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSOAL ~
+$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTADO D~
+$ Valor_Despesa1  &lt;chr&gt; &quot;4999161,91&quot;, &quot;2388,72&quot;, &quot;103288,98&quot;, &quot;14245~</code></pre>
 </div>
 <p>Como pode ser visto, os pontos foram removidos. A expressão regular <code>\\.</code> ‘casa’ os pontos. Como o ponto tem um significado especial em expressões regulares, para que seja possível casar o ‘ponto literal’ é necessário colocar as duas barras antes dele. Em expressões regulares, o ponto tem a função de ‘casar’ com qualquer caractere.</p>
 <p>Agora é necessário substituir a vírgula por ponto.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'>%&gt;%</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
               <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Valor_Despesa1 <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='va'>Valor_Despesa1</span>, <span class='st'>","</span>, <span class='st'>"."</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'><a href='https://tibble.tidyverse.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
+<span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>Rows: 6,781
 Columns: 7
-$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;,...
-$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;P...
-$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE0000...
-$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA ED...
-$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSO...
-$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTAD...
-$ Valor_Despesa1  &lt;chr&gt; &quot;4999161.91&quot;, &quot;2388.72&quot;, &quot;103288.98&quot;, &quot;14...</code></pre>
+$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;2~
+$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRIN~
+$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE00003&quot;,~
+$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA EDUCA~
+$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSOAL ~
+$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTADO D~
+$ Valor_Despesa1  &lt;chr&gt; &quot;4999161.91&quot;, &quot;2388.72&quot;, &quot;103288.98&quot;, &quot;14245~</code></pre>
 </div>
 <p>As vírgulas foram substituídas por pontos. Agora é só converter a variável para o formato numérico.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'>%&gt;%</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
               <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Valor_Despesa1 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>Valor_Despesa1</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'><a href='https://tibble.tidyverse.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
+<span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>Rows: 6,781
 Columns: 7
-$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;,...
-$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;P...
-$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE0000...
-$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA ED...
-$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSO...
-$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTAD...
-$ Valor_Despesa1  &lt;dbl&gt; 4999161.91, 2388.72, 103288.98, 14245.66,...</code></pre>
+$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;2~
+$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRIN~
+$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE00003&quot;,~
+$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA EDUCA~
+$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSOAL ~
+$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTADO D~
+$ Valor_Despesa1  &lt;dbl&gt; 4999161.91, 2388.72, 103288.98, 14245.66, 32~</code></pre>
 </div>
-<p>Agora variável <code>Valor_Despesa1</code> está no formato numérico.</p>
+<p>Agora a variável <code>Valor_Despesa1</code> está no formato numérico.</p>
 <p>Continuando com nosso exemplo, vamos supor que eu queira filtrar a base de dados de forma que apenas os valores dos empenhos iniciados por “50” sejam selecionados. Usando a expressão regular já vista anteriormente posso fazer isso da seguinte forma:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos_50</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'>%&gt;%</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos_50</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
                   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>Valor_Despesa1</span>, <span class='st'>"^50"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>empenhos_50</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
@@ -1748,47 +1762,47 @@ $ Valor_Despesa1  &lt;dbl&gt; 4999161.91, 2388.72, 103288.98, 14245.66,...</code
 <p>Vamos agora criar a nova coluna.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'>%&gt;%</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
               <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>CNPJ_CREDOR <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_extract.html'>str_extract</a></span><span class='op'>(</span><span class='va'>DS_CREDOR</span>, <span class='va'>padrao_cnpj</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'><a href='https://tibble.tidyverse.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
+<span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>Rows: 6,781
 Columns: 8
-$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;,...
-$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;P...
-$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE0000...
-$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA ED...
-$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSO...
-$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTAD...
-$ Valor_Despesa1  &lt;dbl&gt; 4999161.91, 2388.72, 103288.98, 14245.66,...
-$ CNPJ_CREDOR     &lt;chr&gt; &quot;08.778.250/0001-69&quot;, &quot;08.778.250/0001-69...</code></pre>
+$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;2~
+$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRIN~
+$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE00003&quot;,~
+$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA EDUCA~
+$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSOAL ~
+$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTADO D~
+$ Valor_Despesa1  &lt;dbl&gt; 4999161.91, 2388.72, 103288.98, 14245.66, 32~
+$ CNPJ_CREDOR     &lt;chr&gt; &quot;08.778.250/0001-69&quot;, &quot;08.778.250/0001-69&quot;, ~</code></pre>
 </div>
 <p>A nova coluna foi criada apenas com o CNPJ como desejado. Mas vamos supor ainda que eu queira cruzar esta base de dados com uma outra tomando o CNPJ como chave para o cruzamento. Ocorre que nessa outra base o CNPJ está sem pontuação, ou seja, os CNPJ aparecem dessa forma: “08778250000169”. Assim eu preciso remover a pontuação na variável recém criada. Mais uma vez vou utilizar expressão regular.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'>%&gt;%</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
               <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>CNPJ_CREDOR <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove_all</a></span><span class='op'>(</span><span class='va'>CNPJ_CREDOR</span>, <span class='st'>"[[:punct:]]"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'><a href='https://tibble.tidyverse.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
+<span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='va'>empenhos</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code>Rows: 6,781
 Columns: 8
-$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;,...
-$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;P...
-$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE0000...
-$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA ED...
-$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSO...
-$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTAD...
-$ Valor_Despesa1  &lt;dbl&gt; 4999161.91, 2388.72, 103288.98, 14245.66,...
-$ CNPJ_CREDOR     &lt;chr&gt; &quot;08778250000169&quot;, &quot;08778250000169&quot;, &quot;0877...</code></pre>
+$ DT_EMPENHO      &lt;chr&gt; &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;23/01/2020&quot;, &quot;2~
+$ DS_TIPO         &lt;chr&gt; &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRINCIPAL&quot;, &quot;PRIN~
+$ NumNE           &lt;chr&gt; &quot;2020NE00001&quot;, &quot;2020NE00002&quot;, &quot;2020NE00003&quot;,~
+$ CD_ORGAO        &lt;chr&gt; &quot;VALOR DA FOLHA DE PESSOAL - DEMAIS DA EDUCA~
+$ ElementoDespesa &lt;chr&gt; &quot;11-VENCIMENTOS E VANTAGENS FIXAS - PESSOAL ~
+$ DS_CREDOR       &lt;chr&gt; &quot;08.778.250/0001-69 - SECRETARIA DE ESTADO D~
+$ Valor_Despesa1  &lt;dbl&gt; 4999161.91, 2388.72, 103288.98, 14245.66, 32~
+$ CNPJ_CREDOR     &lt;chr&gt; &quot;08778250000169&quot;, &quot;08778250000169&quot;, &quot;0877825~</code></pre>
 </div>
 <p>A expressão regular <code>[[:punct:]]</code> “casa” com os sinais de pontuação.</p>
 <p>Mais um exemplo para finalizar. A variável <code>CD_ORGAO</code> contém a descrição da despesa objeto do empenho. Como poderíamos identificar os empenhos que se refiram a compra de merenda escolar, por exemplo?</p>
 <p>No código a seguir vou usar expressão regular para “casar” a <em>string</em> <code>MERENDA</code> na descrição da despesa.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos_merenda</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'>%&gt;%</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>empenhos_merenda</span> <span class='op'>&lt;-</span> <span class='va'>empenhos</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
                       <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>CD_ORGAO</span>, <span class='st'>"MERENDA"</span><span class='op'>)</span><span class='op'>)</span> 
 </code></pre>
 </div>

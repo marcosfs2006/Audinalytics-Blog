@@ -19,7 +19,7 @@ O meu "projeto" mais recente é o [**ADPrevBook**](https://marcosfs2006.github.i
 
 Atualmente minha área de atuação é a auditoria/fiscalização dos Regimes Próprios de Previdência Social e existe uma enorme oportunidade de usar a análise de dados nessa área, visto que uma grande quantidade de dados dessas entidades, para todo o Brasil, são disponibilizadas pela Secretaria de Previdência.
 
-Esse tutorial é uma ampliação e atualização de um documento anterior publicado no `RPubs` (elencado mais abaixo)no qual são apresentadas sugestões de análise de alguns dos conjuntos de dados disponibilizados pela SPREV.
+Esse tutorial é uma ampliação e atualização de um documento anterior publicado no `RPubs` (elencado mais abaixo) no qual são apresentadas sugestões de análise de alguns dos conjuntos de dados disponibilizados pela SPREV.
 
 O tutorial basicamente mostra o uso das TAACs tradicionais e a elaboração de gráficos. Uma parte importante é a "manipulação de dados" habilidade que o auditor prescisa desenvolver para conseguir realizar suas análises. Não contém, até o momento, nenhum uso de qualquer técnica de _machine learning_, o que está reservado para uma etapa posterior da elaboração deste tutorial.
 
@@ -43,7 +43,7 @@ O R disponibiliza um amplo conjunto de ferramentas que pode auxiliar nessa etapa
 
 # Projeto `LabDadosPrev("RPPS")`
 
-Ainda relacionado aos dois projetos anteriores, o [Laboratório de Análise de Dados Previdenciários dos RPPS](https://colab.research.google.com/drive/1Myiiq8aRmoc14-IHNe5SNTNdYGjWI1tE?usp=sharing), consiste em disponibilizar notebooks do [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb) com informações sobre os dados dos RPPS e também com _scripts_ em R que podem ser executados pelo usuário sem a necessidade de instalar qualquer software.
+Ainda relacionado aos dois projetos anteriores, o Laboratório de Análise de Dados Previdenciários dos RPPS consiste em disponibilizar notebooks do [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb) com informações sobre os dados dos RPPS e também com _scripts_ em R que podem ser executados pelo usuário sem a necessidade de instalar qualquer software.
 
 A vantagem dos notebooks em relação ao documento `ADPrevBook` é que nos notebooks o usuário pode executar o código apresentado, fazer modificações no mesmo, obter para si uma cópia do notebook e modificar tanto o _script_ quanto o conteúdo textual.
 
