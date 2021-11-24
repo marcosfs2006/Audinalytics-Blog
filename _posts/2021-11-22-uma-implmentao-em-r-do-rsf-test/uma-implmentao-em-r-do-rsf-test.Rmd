@@ -35,7 +35,8 @@ maior que os demais valores do grupo.
 Vamos ilustrar com um exemplo para tornar as coisas mais concretas. Suponha o 
 seguinte conjunto de dados:
 
-![](_exemplo-dados.png){width=50%}
+![](exemplo-dados.png){width=50%}
+
 
 
 A variável `Vendor_No` vai definir os grupos de registros, ou seja, cada código de vendedor
