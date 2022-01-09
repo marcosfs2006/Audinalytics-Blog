@@ -7,7 +7,18 @@
     <description>Audinalytics: Auditoria com Inteligência Analítica
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Visualização de Dados em Auditoria</title>
+      <dc:creator>Marcos F. Silva</dc:creator>
+      <link>audinalytics.netlify.app/posts/2022-01-02-visualizao-de-dados-simples-em-auditoria</link>
+      <description>Neste post mostramos como criar visualizações de dados simples usando
+o pacote {ggplot2} e falamos da importância da visualização de dados
+na auditoria.</description>
+      <guid>audinalytics.netlify.app/posts/2022-01-02-visualizao-de-dados-simples-em-auditoria</guid>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <media:content url="audinalytics.netlify.app/posts/2022-01-02-visualizao-de-dados-simples-em-auditoria/visualizao-de-dados-simples-em-auditoria_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Uma Implementação em R do RSF Test</title>
       <dc:creator>Marcos F. Silva</dc:creator>

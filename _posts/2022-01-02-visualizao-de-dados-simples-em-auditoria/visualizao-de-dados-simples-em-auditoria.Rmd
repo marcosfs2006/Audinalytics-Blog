@@ -14,10 +14,12 @@ output:
     toc: true
     toc_depth: 2
     toc_float: true
-draft: true
+draft: false
 ---
 
-<!-- https://www.youtube.com/watch?v=UQ8fu9KtKFk 
+<!-- 
+
+https://www.youtube.com/watch?v=UQ8fu9KtKFk 
      https://www.youtube.com/watch?v=DYsPRa3vpf0
 
 -->
@@ -31,8 +33,8 @@ knitr::opts_chunk$set(echo = TRUE)
 Neste _post_ nosso objetivo é mostrar como utilizar o R para implementar
 visualização de dados em um contexto auditoria. Para isso vamos utilizar um
 conjunto de dados apresentado no artigo **_Data Analytics for Financial 
-Statement Audits_** de autoria de Trevor R. Stewart, um dos seis artigos que
-integram o livro [**Audit Analytics and Continuous Audit: Looking Towards the Future**](https://www.aicpa.org/interestareas/frc/assuranceadvisoryservices/downloadabledocuments/auditanalytics_lookingtowardfuture.pdf), disponível  para _download_ gratuitamente. 
+Statement Audits_** de autoria de Trevor R. Stewart. Este artigo é um dos seis
+que integram o livro [**Audit Analytics and Continuous Audit: Looking Towards the Future**](https://www.aicpa.org/interestareas/frc/assuranceadvisoryservices/downloadabledocuments/auditanalytics_lookingtowardfuture.pdf), disponível  para _download_ gratuitamente. 
 
 
 O conjunto de dados está no arquivo `on_the_go_stores.xlsx` e é
@@ -41,10 +43,10 @@ Procedures_** onde, por meio de um estudo de caso, ilustra a aplicação de
 procedimentos analíticos tanto no planejamento quanto na aplicação de 
 testes substantivos.
 
-Vamos ilustrar o exemplo denominado **Simple DA Visualization** 
+Vamos trabalhar o exemplo denominado **Simple DA Visualization** 
 apresentado no artigo em referência com o objetivo de **obter uma melhor
-compreensão do ambiente de negócio da entidade** e identificar riscos de erros
-materiais.
+compreensão do ambiente de negócio da entidade** e **identificar riscos de erros
+materiais**.
 
 <aside>
 
@@ -63,7 +65,7 @@ citadas para utilização em procedimentos analíticos são:
 **(a)** Análise de tendências, **(b)** Análise de quocientes, 
 **(c)** Testes de razoabilidade,  e **(d)** Análise de regressão.
 
-Modernamente essas técnicas podem ser ampliadas para incluir também as 
+Modernamente essas técnicas podem ser ampliadas para incluir também  
 técnicas que compõem o que se chama de **aprendizado de máquina**
 (_machine learning_)
 
