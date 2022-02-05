@@ -7,7 +7,21 @@
     <description>Audinalytics: Auditoria com Inteligência Analítica
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Reproduzindo Análises Feitas no IDEA - Parte I</title>
+      <dc:creator>Marcos F. Silva</dc:creator>
+      <link>audinalytics.netlify.app/posts/2022-02-01-reproduzindo-anlises-feitas-no-idea-parte-i</link>
+      <description>Neste _post_ nosso objetivo é reproduzir análises feitas no IDEA com o objetivo
+de mostrar os recursos disponíveis no R para a realização de análises típicas
+de auditoria.</description>
+      <category>Forensic Analytics</category>
+      <category>IDEA</category>
+      <category>Análise de Dados</category>
+      <guid>audinalytics.netlify.app/posts/2022-02-01-reproduzindo-anlises-feitas-no-idea-parte-i</guid>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <media:content url="audinalytics.netlify.app/posts/2022-02-01-reproduzindo-anlises-feitas-no-idea-parte-i/reproduzindo-anlises-feitas-no-idea-parte-i_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Análise Exploratória de Dados e _Forensic Analytics_</title>
       <dc:creator>Marcos F. Silva</dc:creator>
@@ -19,6 +33,18 @@ Analytics** 2a Ed. do Mark Nigrini</description>
       <guid>audinalytics.netlify.app/posts/2022-01-23-anlise-exploratria-de-dados-e-forensic-analytics</guid>
       <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
       <media:content url="audinalytics.netlify.app/posts/2022-01-23-anlise-exploratria-de-dados-e-forensic-analytics/anlise-exploratria-de-dados-e-forensic-analytics_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Usando R em Forensic Analytics</title>
+      <dc:creator>Marcos F. Silva</dc:creator>
+      <link>audinalytics.netlify.app/posts/2022-01-26-usando-r-em-forensic-analytics</link>
+      <description>Neste _post_, inspirado nos Capítulos 1, 2 e 3 do livro Forensic Analytics
+do Mark Nigrini (1^a^ Edição), nosso objetivo é apresentar alguns recursos
+que o R possui que o tornam uma ferramenta mais que adequada para implementação
+das técnicas de auditoria forense computacional.</description>
+      <category>Livro Forensic Analytics</category>
+      <guid>audinalytics.netlify.app/posts/2022-01-26-usando-r-em-forensic-analytics</guid>
+      <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Visualização de Dados em Auditoria</title>
